@@ -83,7 +83,33 @@ deploy:
   branch: master
 
 
-# local search
-search:
-	path: search.xml
-	field: all
+# local search ---> themes: material
+# search:
+# 	path: search.xml
+# 	field: all
+
+# local search ---> themes: indigo
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true
+
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'ghcolors' #duotone-light base16-ateliersulphurpool.light
+  line_number: true    # default false
+  # custom_css: 'path/to/your/custom.css'     # optional

@@ -29,19 +29,20 @@
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="src目录结构分析">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-01T09:56:39.167Z">
+<meta property="og:updated_time" content="2018-08-01T15:31:45.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="src目录结构分析">
 <meta name="twitter:description" content="src目录结构分析">
     
-    <link rel="shortcut icon" href="/favicon.jpg">
+    <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-</head>
+<link rel="stylesheet" href="/css/prism-ghcolors.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -195,45 +196,46 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>src目录结构及命名原则分析</p>
+<a id="more"></a>
 <!-- markdownlint-disable MD002 MD041-->
-<h2 id="src目录结构分析"><a href="#src目录结构分析" class="headerlink" title="src目录结构分析"></a>src目录结构分析</h2><pre><code class="bash">.
-├── adapter -----&gt; 适配器,处理拿到的数据,整理成对象或者别的能直接使用的数据
-|   ├── report.js -----&gt; (驼峰命名：与api命名一致)
-|   └── selectPhoneNumber.js -----&gt; (驼峰命名: 与api命名一致)
-|
-├── api -----&gt; 通过后台接口拿到数据
-|   ├── report.js -----&gt; (驼峰命名)
-|   └── selectPhoneNumber.js -----&gt; (驼峰命名)
-|
+<h2 id="src目录结构分析"><a href="#src目录结构分析" class="headerlink" title="src目录结构分析"></a>src目录结构分析</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">.</span>
+├── adapter -----<span class="token operator">></span> 适配器,处理拿到的数据,整理成对象或者别的能直接使用的数据
+<span class="token operator">|</span>   ├── report.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名：与api命名一致<span class="token punctuation">)</span>
+<span class="token operator">|</span>   └── selectPhoneNumber.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名: 与api命名一致<span class="token punctuation">)</span>
+<span class="token operator">|</span>
+├── api -----<span class="token operator">></span> 通过后台接口拿到数据
+<span class="token operator">|</span>   ├── report.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
+<span class="token operator">|</span>   └── selectPhoneNumber.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
+<span class="token operator">|</span>
 ├── assets
-|
-├── components -----&gt; 组件,通过在 views 中的 vue 文件的调用并传入数据,然后渲染在页面中,复用性强
-|   ├── AreaCard.vue -----&gt;  (Pascal命名)
-|   ├── Chart.vue
-|   └── Entry.vue
-|
-├── router -----&gt; 路由
-|   └── index.js
-|
-├── store -----&gt; vuex
-|   ├── modules -----&gt; vuex模块
-|   |   ├── clothesSize.js -----&gt; (驼峰命名)
-|   |   ├── login.js
-|   |   └── user.js
-|   └── index.js
-|
-├── util -----&gt; 自己封装的js
-|   ├── fetch.js
-|   └── index.js
-|
-└── views -----&gt; 页面展示
-    ├── Report.vue -----&gt; (Pascal命名: 与api命名一致)
+<span class="token operator">|</span>
+├── components -----<span class="token operator">></span> 组件,通过在 views 中的 vue 文件的调用并传入数据,然后渲染在页面中,复用性强
+<span class="token operator">|</span>   ├── AreaCard.vue -----<span class="token operator">></span>  <span class="token punctuation">(</span>Pascal命名<span class="token punctuation">)</span>
+<span class="token operator">|</span>   ├── Chart.vue
+<span class="token operator">|</span>   └── Entry.vue
+<span class="token operator">|</span>
+├── router -----<span class="token operator">></span> 路由
+<span class="token operator">|</span>   └── index.js
+<span class="token operator">|</span>
+├── store -----<span class="token operator">></span> vuex
+<span class="token operator">|</span>   ├── modules -----<span class="token operator">></span> vuex模块
+<span class="token operator">|</span>   <span class="token operator">|</span>   ├── clothesSize.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
+<span class="token operator">|</span>   <span class="token operator">|</span>   ├── login.js
+<span class="token operator">|</span>   <span class="token operator">|</span>   └── user.js
+<span class="token operator">|</span>   └── index.js
+<span class="token operator">|</span>
+├── util -----<span class="token operator">></span> 自己封装的js
+<span class="token operator">|</span>   ├── fetch.js
+<span class="token operator">|</span>   └── index.js
+<span class="token operator">|</span>
+└── views -----<span class="token operator">></span> 页面展示
+    ├── Report.vue -----<span class="token operator">></span> <span class="token punctuation">(</span>Pascal命名: 与api命名一致<span class="token punctuation">)</span>
     ├── Dormitory
-    |   ├── DormitoryStudent.vue -----&gt; (Pascal命名)
-    |   ├── Edit.vue
-    |   └── index.vue
+    <span class="token operator">|</span>   ├── DormitoryStudent.vue -----<span class="token operator">></span> <span class="token punctuation">(</span>Pascal命名<span class="token punctuation">)</span>
+    <span class="token operator">|</span>   ├── Edit.vue
+    <span class="token operator">|</span>   └── index.vue
     └── Home.vue
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>api —–&gt; adapter —–&gt; views —–&gt; 同一个页面：这三个文件夹的命名对应一致 或者 与 views 中的文件夹命名一致</p>
 
         </div>
@@ -243,7 +245,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-08-01T09:56:39.167Z" itemprop="dateUpdated">2018-08-01 17:56:39</time>
+    最后更新时间：<time datetime="2018-08-01T15:31:45.994Z" itemprop="dateUpdated">2018-08-01 23:31:45</time>
 </span><br>
 
 
@@ -289,7 +291,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&title=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&source=一个前端小白的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&title=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&source=src目录结构及命名原则分析" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -370,7 +372,7 @@
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        给我买辣条吗？
+        给我买辣条吗
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">
@@ -434,7 +436,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&title=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&source=一个前端小白的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&title=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&source=src目录结构及命名原则分析" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

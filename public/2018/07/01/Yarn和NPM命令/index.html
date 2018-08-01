@@ -29,19 +29,20 @@
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="Yarn和 NPM命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-01T09:56:39.167Z">
+<meta property="og:updated_time" content="2018-08-01T15:31:27.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yarn和 NPM命令">
 <meta name="twitter:description" content="Yarn和 NPM命令">
     
-    <link rel="shortcut icon" href="/favicon.jpg">
+    <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-</head>
+<link rel="stylesheet" href="/css/prism-ghcolors.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -195,6 +196,7 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Yarn和 NPM命令</p>
+<a id="more"></a>
 <!-- markdownlint-disable MD041 MD002-->
 <h2 id="Yarn和-NPM命令"><a href="#Yarn和-NPM命令" class="headerlink" title="Yarn和 NPM命令"></a>Yarn和 NPM命令</h2><ul>
 <li>NPM是随同 NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题</li>
@@ -259,9 +261,9 @@
 <ul>
 <li>可以通过输入<code>npm -v</code>来测试是否成功安装</li>
 </ul>
-<pre><code class="bash">npm -v
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> -v
 6.2.0
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="NPM-常用命令"><a href="#NPM-常用命令" class="headerlink" title="NPM 常用命令"></a>NPM 常用命令</h3><ul>
 <li>NPM提供了很多命令，使用<code>npm help</code>可查看所有命令。</li>
 <li>使用<code>npm help &lt;command&gt;</code>可查看某条命令的详细帮助，例如<code>npm help install</code></li>
@@ -272,11 +274,11 @@
 <li>通过 msi 安装的 yarn 并不会覆盖通过 npm 安装的 yarn，两者同时存在。卸载的话，也是分开卸载的。</li>
 </ul>
 <h4 id="NPM加版本号安装"><a href="#NPM加版本号安装" class="headerlink" title="NPM加版本号安装"></a>NPM加版本号安装</h4><p>虽然，我们不能通过<code>npm install yarn -g</code>的方法，获得最新的yarn。但是，我们已经知道了yarn的最新版的版本号，所以，我们可以直接指定版本号进行安装。</p>
-<pre><code class="bash">npm install yarn@1.9.2 -g
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@1.9.2 -g
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这样的话，就可以不使用msi，而还是采用更高大上的命令行模式安装最新版的yarn了。<br>我们可以用<code>npm view yarn version</code>，查看NPM上的最新版本。</p>
-<h4 id="NPM-加-latest-安装"><a href="#NPM-加-latest-安装" class="headerlink" title="NPM 加 latest 安装"></a>NPM 加 latest 安装</h4><pre><code class="bash">npm install yarn@latest -g
-</code></pre>
+<h4 id="NPM-加-latest-安装"><a href="#NPM-加-latest-安装" class="headerlink" title="NPM 加 latest 安装"></a>NPM 加 latest 安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@latest -g
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
         </div>
 
@@ -285,7 +287,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-08-01T09:56:39.167Z" itemprop="dateUpdated">2018-08-01 17:56:39</time>
+    最后更新时间：<time datetime="2018-08-01T15:31:27.904Z" itemprop="dateUpdated">2018-08-01 23:31:27</time>
 </span><br>
 
 
@@ -331,7 +333,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/01/Yarn和NPM命令/&title=《Yarn和 NPM命令》 — 拈花把酒偏折煞世人情狂&source=一个前端小白的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/01/Yarn和NPM命令/&title=《Yarn和 NPM命令》 — 拈花把酒偏折煞世人情狂&source=Yarn和 NPM命令" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -405,7 +407,7 @@
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        给我买辣条吗？
+        给我买辣条吗
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">
@@ -469,7 +471,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/01/Yarn和NPM命令/&title=《Yarn和 NPM命令》 — 拈花把酒偏折煞世人情狂&source=一个前端小白的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/01/Yarn和NPM命令/&title=《Yarn和 NPM命令》 — 拈花把酒偏折煞世人情狂&source=Yarn和 NPM命令" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

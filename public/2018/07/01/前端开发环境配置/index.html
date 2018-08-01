@@ -29,19 +29,20 @@
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="前端开发环境配置">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-01T09:56:39.167Z">
+<meta property="og:updated_time" content="2018-08-01T15:31:36.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发环境配置">
 <meta name="twitter:description" content="前端开发环境配置">
     
-    <link rel="shortcut icon" href="/favicon.jpg">
+    <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-</head>
+<link rel="stylesheet" href="/css/prism-ghcolors.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -195,6 +196,7 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>前端开发环境配置、淘宝镜像及跨域处理</p>
+<a id="more"></a>
 <!-- markdownlint-disable MD041 MD002-->
 <h2 id="开发环境准备工作"><a href="#开发环境准备工作" class="headerlink" title="开发环境准备工作"></a>开发环境准备工作</h2><h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3><ul>
 <li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">NodeJS</a> 10版本以上</li>
@@ -205,32 +207,32 @@
 <h3 id="NPM和Yarn添加淘宝镜像"><a href="#NPM和Yarn添加淘宝镜像" class="headerlink" title="NPM和Yarn添加淘宝镜像"></a>NPM和Yarn添加淘宝镜像</h3><h4 id="NPM设置淘宝镜像"><a href="#NPM设置淘宝镜像" class="headerlink" title="NPM设置淘宝镜像"></a>NPM设置淘宝镜像</h4><ul>
 <li>查询当前配置的镜像</li>
 </ul>
-<pre><code class="bash">npm get registry  // https://registry.npmjs.org/
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> get registry  // https://registry.npmjs.org/
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>设置成淘宝镜像</li>
 </ul>
-<pre><code class="bash">npm config set registry http://registry.npm.taobao.org/
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry http://registry.npm.taobao.org/
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>换成原来的</li>
 </ul>
-<pre><code class="bash">npm config set registry https://registry.npmjs.org/
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry https://registry.npmjs.org/
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Yarn-设置淘宝镜像"><a href="#Yarn-设置淘宝镜像" class="headerlink" title="Yarn 设置淘宝镜像"></a>Yarn 设置淘宝镜像</h4><ul>
 <li>查询当前配置的镜像</li>
 </ul>
-<pre><code class="bash">yarn config get registry // https://registry.yarnpkg.com
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yarn config get registry // https://registry.yarnpkg.com
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>设置成淘宝镜像</li>
 </ul>
-<pre><code class="bash">yarn config set registry http://registry.npm.taobao.org/
-</code></pre>
-<h3 id="安装vue脚手架和-eslint"><a href="#安装vue脚手架和-eslint" class="headerlink" title="安装vue脚手架和 eslint"></a>安装vue脚手架和 eslint</h3><pre><code class="bash">[sudo] yarn global add vue-cli
-[sudo] yarn global add eslint
-[sudo] yarn global add eslint mocha
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yarn config <span class="token keyword">set</span> registry http://registry.npm.taobao.org/
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="安装vue脚手架和-eslint"><a href="#安装vue脚手架和-eslint" class="headerlink" title="安装vue脚手架和 eslint"></a>安装vue脚手架和 eslint</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>sudo<span class="token punctuation">]</span> yarn global add vue-cli
+<span class="token punctuation">[</span>sudo<span class="token punctuation">]</span> yarn global add eslint
+<span class="token punctuation">[</span>sudo<span class="token punctuation">]</span> yarn global add eslint mocha
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="安装VS-code插件"><a href="#安装VS-code插件" class="headerlink" title="安装VS code插件"></a>安装VS code插件</h3><ul>
 <li>Auto Close Tag</li>
 <li>Auto Rename Tag</li>
@@ -268,7 +270,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-08-01T09:56:39.167Z" itemprop="dateUpdated">2018-08-01 17:56:39</time>
+    最后更新时间：<time datetime="2018-08-01T15:31:36.780Z" itemprop="dateUpdated">2018-08-01 23:31:36</time>
 </span><br>
 
 
@@ -314,7 +316,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/01/前端开发环境配置/&title=《前端开发环境配置》 — 拈花把酒偏折煞世人情狂&source=一个前端小白的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/01/前端开发环境配置/&title=《前端开发环境配置》 — 拈花把酒偏折煞世人情狂&source=前端开发环境配置、淘宝镜像及跨域处理" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -395,7 +397,7 @@
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        给我买辣条吗？
+        给我买辣条吗
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">
@@ -459,7 +461,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/01/前端开发环境配置/&title=《前端开发环境配置》 — 拈花把酒偏折煞世人情狂&source=一个前端小白的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/01/前端开发环境配置/&title=《前端开发环境配置》 — 拈花把酒偏折煞世人情狂&source=前端开发环境配置、淘宝镜像及跨域处理" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

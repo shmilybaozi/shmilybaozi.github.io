@@ -8,6 +8,7 @@ description: Git更新与推送流程
 
 Git更新与推送流程
 
+<!-- more -->
 <!-- markdownlint-disable MD041 MD002-->
 
 ## Git更新与推送流程

@@ -35,7 +35,7 @@ avatar_link: /about
 # 头像背景图
 brand: /img/brand.jpg
 # favicon
-favicon: /favicon.jpg
+favicon: /img/favicon.ico
 
 # email
 email: shmilybaozi@163.com
@@ -51,8 +51,8 @@ categories_title: Categories
 # 文章截断
 excerpt_render: false
 excerpt_length: 200
-excerpt_link: 阅读全文  
-mathjax: true
+excerpt_link: 阅读全文 
+mathjax: false
 archive_yearly: true
 
 # 是否显示文章最后更新时间
@@ -63,7 +63,7 @@ share: true
 
 # 是否开启打赏，关闭 reward: false
 reward:
-  title: 给我买辣条吗？
+  title: 给我买辣条吗
   wechat: /img/wechat.png     #微信，关闭设为 false
   alipay: /img/alipay.png     #支付宝，关闭设为 false
 

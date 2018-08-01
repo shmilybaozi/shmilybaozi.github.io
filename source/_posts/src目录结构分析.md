@@ -8,6 +8,7 @@ date: 2018-07-08 23:15:22
 
 src目录结构及命名原则分析
 
+<!-- more -->
 <!-- markdownlint-disable MD002 MD041-->
 
 ## src目录结构分析

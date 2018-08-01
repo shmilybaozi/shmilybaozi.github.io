@@ -10,6 +10,7 @@ description: Yarn和 NPM命令
 
 Yarn和 NPM命令
 
+<!-- more -->
 <!-- markdownlint-disable MD041 MD002-->
 
 ## Yarn和 NPM命令
