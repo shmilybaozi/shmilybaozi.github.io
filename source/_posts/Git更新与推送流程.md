@@ -102,11 +102,12 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
   last = log -1
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   up = upstream
+  og = origin
   ms = master
   mg = merge
-  rap = remote add upstream
-  mgum = merge upstream/master master
-  rao = remote add origin
-  psgms = push -u origin master
   plp = pull upstream
+  mgums = merge upstream/master master
+  rap = remote add upstream
+  rag = remote add origin
+  psgms = push -u origin master
 ```

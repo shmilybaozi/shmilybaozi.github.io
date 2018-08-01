@@ -6,7 +6,7 @@
       <title>Git更新与推送流程</title>
       <link href="/2018/07/29/Git%E6%9B%B4%E6%96%B0%E4%B8%8E%E6%8E%A8%E9%80%81%E6%B5%81%E7%A8%8B/"/>
       <url>/2018/07/29/Git%E6%9B%B4%E6%96%B0%E4%B8%8E%E6%8E%A8%E9%80%81%E6%B5%81%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<p>Git更新与推送流程</p><!-- markdownlint-disable MD041 MD002--><h2 id="Git更新与推送流程"><a href="#Git更新与推送流程" class="headerlink" title="Git更新与推送流程"></a>Git更新与推送流程</h2><ul><li>设置主仓库地址</li></ul><pre><code class="bash">git remote add upstream https://repo-address</code></pre><ul><li>获取主仓库最新提交</li></ul><pre><code class="bash">git pull upstream</code></pre><ul><li>将主仓库的 <code>master</code> 分支合并到本地的 <code>master</code> 分支</li></ul><pre><code class="bash">git merge upstream/master master</code></pre><ul><li>解决冲突并提交合并</li></ul><pre><code class="bash">git commit -a -m &#39;merge upstream master&#39;</code></pre><ul><li>推送至远程仓库</li></ul><pre><code class="bash">git push</code></pre><ul><li>提交Pull Request</li></ul><h2 id="自定义Git"><a href="#自定义Git" class="headerlink" title="自定义Git"></a>自定义Git</h2><h3 id="让Git显示颜色"><a href="#让Git显示颜色" class="headerlink" title="让Git显示颜色"></a>让Git显示颜色</h3><pre><code class="bash">git config --global color.ui true</code></pre><h3 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h3><ul><li><code>git st</code>表示<code>git status</code></li><li><code>git co</code>表示<code>git checkout</code></li><li><code>git ci</code>表示<code>git commit</code></li><li><code>git br</code>表示<code>git branch</code></li></ul><pre><code class="bash">git config --global alias.st statusgit config --global alias.co checkoutgit config --global alias.ci commitgit config --global alias.br branch</code></pre><ul><li>命令<code>git reset HEAD file</code>可以把暂存区的修改撤销掉（unstage），重新放回工作区。既然是一个unstage操作，就可以配置一个unstage别名：</li></ul><pre><code class="bash">git config --global alias.unstage &#39;reset HEAD&#39;</code></pre><ul><li>配置一个<code>git last</code>，让其显示最后一次提交信息：</li></ul><pre><code class="bash">git config --global alias.last &#39;log -1&#39;</code></pre><ul><li>还有人丧心病狂地把<code>lg</code>配置成了：</li></ul><pre><code class="bash">git config --global alias.lg &quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</code></pre><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置Git的时候，加上<code>--global</code>是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。<br>配置文件放哪了?每个仓库的Git配置文件都放在<code>.git/config</code>文件中<br>而当前用户的Git配置文件放在用户主目录下的一个隐藏文件<code>.gitconfig</code>中<br>别名就在<code>[alias]</code>后面，要删除别名，直接把对应的行删掉即可。<br>配置别名也可以直接修改这个文件，如果改错了，可以删掉文件重新通过命令配置。</p><pre><code class="bash">[alias]  st = status  co = checkout  ci = commit  br = branch  unstage = reset HEAD  last = log -1  lg = log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit  up = upstream  ms = master  mg = merge  rap = remote add upstream  mgum = merge upstream/master master  rao = remote add origin  psgms = push -u origin master  plp = pull upstream</code></pre>]]></content>
+      <content type="html"><![CDATA[<p>Git更新与推送流程</p><!-- markdownlint-disable MD041 MD002--><h2 id="Git更新与推送流程"><a href="#Git更新与推送流程" class="headerlink" title="Git更新与推送流程"></a>Git更新与推送流程</h2><ul><li>设置主仓库地址</li></ul><pre><code class="bash">git remote add upstream https://repo-address</code></pre><ul><li>获取主仓库最新提交</li></ul><pre><code class="bash">git pull upstream</code></pre><ul><li>将主仓库的 <code>master</code> 分支合并到本地的 <code>master</code> 分支</li></ul><pre><code class="bash">git merge upstream/master master</code></pre><ul><li>解决冲突并提交合并</li></ul><pre><code class="bash">git commit -a -m &#39;merge upstream master&#39;</code></pre><ul><li>推送至远程仓库</li></ul><pre><code class="bash">git push</code></pre><ul><li>提交Pull Request</li></ul><h2 id="自定义Git"><a href="#自定义Git" class="headerlink" title="自定义Git"></a>自定义Git</h2><h3 id="让Git显示颜色"><a href="#让Git显示颜色" class="headerlink" title="让Git显示颜色"></a>让Git显示颜色</h3><pre><code class="bash">git config --global color.ui true</code></pre><h3 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h3><ul><li><code>git st</code>表示<code>git status</code></li><li><code>git co</code>表示<code>git checkout</code></li><li><code>git ci</code>表示<code>git commit</code></li><li><code>git br</code>表示<code>git branch</code></li></ul><pre><code class="bash">git config --global alias.st statusgit config --global alias.co checkoutgit config --global alias.ci commitgit config --global alias.br branch</code></pre><ul><li>命令<code>git reset HEAD file</code>可以把暂存区的修改撤销掉（unstage），重新放回工作区。既然是一个unstage操作，就可以配置一个unstage别名：</li></ul><pre><code class="bash">git config --global alias.unstage &#39;reset HEAD&#39;</code></pre><ul><li>配置一个<code>git last</code>，让其显示最后一次提交信息：</li></ul><pre><code class="bash">git config --global alias.last &#39;log -1&#39;</code></pre><ul><li>还有人丧心病狂地把<code>lg</code>配置成了：</li></ul><pre><code class="bash">git config --global alias.lg &quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</code></pre><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置Git的时候，加上<code>--global</code>是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。<br>配置文件放哪了?每个仓库的Git配置文件都放在<code>.git/config</code>文件中<br>而当前用户的Git配置文件放在用户主目录下的一个隐藏文件<code>.gitconfig</code>中<br>别名就在<code>[alias]</code>后面，要删除别名，直接把对应的行删掉即可。<br>配置别名也可以直接修改这个文件，如果改错了，可以删掉文件重新通过命令配置。</p><pre><code class="bash">[alias]  st = status  co = checkout  ci = commit  br = branch  unstage = reset HEAD  last = log -1  lg = log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit  up = upstream  og = origin  ms = master  mg = merge  plp = pull upstream  mgums = merge upstream/master master  rap = remote add upstream  rag = remote add origin  psgms = push -u origin master</code></pre>]]></content>
       
       <categories>
           
@@ -96,13 +96,6 @@
   
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>timeline</title>
       <link href="/timeline/index.html"/>
       <url>/timeline/index.html</url>
@@ -113,13 +106,20 @@
       <title>About Me</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      <content type="html"><![CDATA[<!-- markdownlint-disable MD002 MD041--><h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><ul><li><p>汤佳人</p><ul><li>喜欢宅，心态肥宅，爱好二次元</li><li>养猫</li><li>自学前端开发</li><li>喜欢所见即所得的工作方式</li><li>成功减肥20斤</li></ul></li></ul><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul><li>主页: <a href="https://shmilybaozi.github.io/" target="_blank" rel="noopener">https://shmilybaozi.github.io/</a></li><li>GitHub: shmilybaozi</li><li>QQ: 35772502</li><li>WeChat: shmilybaozi</li><li>Location: 湖南长沙</li></ul>]]></content>
+      <content type="html"><![CDATA[<!-- markdownlint-disable MD002 MD041--><h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><ul><li><p>汤佳人</p><ul><li>喜欢宅，心态肥宅，爱好二次元</li><li>养猫</li><li>自学前端开发</li><li>喜欢所见即所得的工作方式</li><li>成功减肥20斤</li></ul></li></ul><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul><li>主页: <a href="https://shmilybaozi.github.io/">https://shmilybaozi.github.io/</a></li><li>GitHub: shmilybaozi</li><li>QQ: 35772502</li><li>WeChat: shmilybaozi</li><li>Location: 湖南长沙</li></ul>]]></content>
     </entry>
     
     <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
