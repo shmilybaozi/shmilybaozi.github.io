@@ -40,12 +40,12 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="一个前端小白的个人博客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-01T09:56:39.167Z">
+<meta property="og:updated_time" content="2018-07-28T12:36:39.273Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="timeline">
 <meta name="twitter:description" content="一个前端小白的个人博客">
     
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
@@ -255,6 +255,30 @@ ga('send', 'pageview');
 
 
 
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lR19hDUE0Q2h2eaOzABAwsxT-gzGzoHsz",
+            appKey: "1dAq0UusjAuDeTy6Tegon4PB",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
 
 
 

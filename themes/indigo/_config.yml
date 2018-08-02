@@ -35,7 +35,7 @@ avatar_link: /about
 # 头像背景图
 brand: /img/brand.jpg
 # favicon
-favicon: /img/favicon.ico
+favicon: /favicon.ico
 
 # email
 email: shmilybaozi@163.com
@@ -118,9 +118,9 @@ gitment: false
 
 # Valine Comment system. https://valine.js.org
 valine:
-  enable: false # 如果你想使用valine，请将值设置为 true
-  appId:  # your leancloud appId
-  appKey:  # your leancloud appKey
+  enable: true # 如果你想使用valine，请将值设置为 true
+  appId: lR19hDUE0Q2h2eaOzABAwsxT-gzGzoHsz # your leancloud appId
+  appKey: 1dAq0UusjAuDeTy6Tegon4PB  # your leancloud appKey
   notify: false # Mail notify
   verify: false # Verify code
   avatar: mm # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
