@@ -110,5 +110,5 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
   mgums = merge upstream/master master
   rap = remote add upstream
   rag = remote add origin
-  psgms = push -u origin master
+  psg = push -u origin
 ```

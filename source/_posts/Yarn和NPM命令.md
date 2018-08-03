@@ -19,12 +19,12 @@ Yarn和 NPM命令
 - Yarn 是一个新的包管理器，用于替代现有的 npm 客户端或者其他兼容 npm 仓库的包管理工具。Yarn 保留了现有工作流的特性，优点是更快、更安全、更可靠。
 
 | 命令 | NPM | Yarn |
-|---|---|---|---|
+|---|---|---|
 | 安装 | 新版的NodeJS 已经集成了NPM | `npm install -g yarn` |
 | 升级 | `npm install npm -g` | 见[Yarn升级](#Yarn升级) |
 | 安装所有的依赖包   | `npm install` | `yarn` |
 | 安装某个依赖 | `npm install [package] --save/-S` | `yarn add [package]` |
-| 安装某个开发时依赖项目 | `npm install [package] --save-dev/-D` | `yarn add [package] --dev` |
+| 安装某个开发时依赖项目 | `npm install [package] --save-dev/-D` | `yarn add [package] --dev/-D` |
 | 安装某个全局依赖项目 | `npm install [package] -g` | `yarn global add [package]` |
 | 更新某个依赖 | `npm update [package] --save/-S` | `yarn upgrade [package]` |
 | 删除某个依赖 | `npm uninstall [package] --save/-S` | `yarn remove [package]` |
