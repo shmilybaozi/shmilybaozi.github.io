@@ -27,7 +27,7 @@ Yarn和 NPM命令
 | 安装某个开发时依赖项目 | `npm install [package] --save-dev/-D` | `yarn add [package] --dev/-D` |
 | 安装某个全局依赖项目 | `npm install [package] -g` | `yarn global add [package]` |
 | 更新某个依赖 | `npm update [package] --save/-S` | `yarn upgrade [package]` |
-| 删除某个依赖 | `npm uninstall [package] --save/-S` | `yarn remove [package]` |
+| 删除某个依赖 | `npm uninstall [package]` | `yarn remove [package]` |
 | 运行脚本 | `npm run` | `yarn run` |
 
 - 可以通过输入`npm -v`来测试是否成功安装
