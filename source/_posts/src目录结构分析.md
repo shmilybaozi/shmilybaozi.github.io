@@ -53,4 +53,4 @@ src目录结构及命名原则分析
     └── Home.vue
 ```
 
-api -----> adapter -----> views -----> 同一个页面：这三个文件夹的命名对应一致 或者 与 views 中的文件夹命名一致
+api -----> adapter -----> views -----> 同一个页面：这三个文件夹的命名对应一致 或者 api、adapter 与 views 中的文件夹命名一致
