@@ -26,7 +26,9 @@ Yarn和 NPM命令
 | 安装某个依赖 | `npm install [package] --save/-S` | `yarn add [package]` |
 | 安装某个开发时依赖项目 | `npm install [package] --save-dev/-D` | `yarn add [package] --dev/-D` |
 | 安装某个全局依赖项目 | `npm install [package] -g` | `yarn global add [package]` |
-| 更新某个依赖 | `npm update [package] --save/-S` | `yarn upgrade [package]` |
+| 更新某个依赖 | `npm update [package]` | `yarn upgrade [package]` |
+| 更新某个依赖到某个版本 | `npm update [package@version]` | `yarn upgrade [package@version]` |
+| 更新某个依赖到最新版本 | `npm update [package@latest]` | `yarn upgrade [package] --latest` |
 | 删除某个依赖 | `npm uninstall [package]` | `yarn remove [package]` |
 | 运行脚本 | `npm run` | `yarn run` |
 
