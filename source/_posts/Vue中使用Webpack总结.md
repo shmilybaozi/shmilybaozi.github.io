@@ -67,7 +67,6 @@ module.exports = {
   // 决定如何处理项目中的不同类型的模块
   module: {
     // 创建模块时，匹配请求的规则数组。这些规则能够修改模块的创建方式。这些规则能够对模块(module)应用 loader，或者修改解析器(parser)
-    
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
