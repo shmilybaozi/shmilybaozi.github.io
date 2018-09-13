@@ -17,16 +17,38 @@ Webpack 打包工具(模块打包器)
 
 ## Webpack结构
 
-Vue中关于 Webpack的配置文件有四个: (vue-cli版本@2.9.6)
+Vue中 关于Webpack的配置文件有四个: (vue-cli版本@2.9.6)
 
-- webpack.base.conf.js 主要配置文件
-- webpack.dev.conf.js 开发环境配置文件
-- webpack.prod.conf.js 生产环境配置文件
-- webpack.test.conf.js 需要单元测试时的配置文件
+- build文件夹
+  - webpack.base.conf.js 主要配置文件
+  - webpack.dev.conf.js 开发环境配置文件
+  - webpack.prod.conf.js 生产环境配置文件
+  - webpack.test.conf.js 需要单元测试时的配置文件
 
 ## webpack.base.conf.js
 
 ```js
+'use strict'
+const path = require('path')
+const utils = require('./utils')
+const config = require('../config')
+const vueLoaderConfig = require('./vue-loader.conf')
+
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
+
+const createLintingRule = () => ({
+  test: /\.(js|vue)$/,
+  loader: 'eslint-loader',
+  enforce: 'pre',
+  include: [resolve('src'), resolve('test')],
+  options: {
+    formatter: require('eslint-friendly-formatter'),
+    emitWarning: !config.dev.showEslintErrorsInOverlay
+  }
+})
+
 module.exports = {
   // 基础目录，绝对路径，用于从配置中解析入口起点(entry point)和 loader
   context: path.resolve(__dirname, '../'),
@@ -51,7 +73,7 @@ module.exports = {
     publicPath: '', // 相对于 HTML 页面（目录相同）
     // Vue中: 判断环境变量的值,去对应的环境变量中寻找设置
     publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath // 默认为"/"
+      ? config.build.assetsPublicPath // 默认为"/"，一般会修改为"./"
       : config.dev.assetsPublicPath // 默认为"/"
   },
   // 配置模块如何解析
@@ -61,7 +83,7 @@ module.exports = {
     // 创建 import 或 require 的别名，来确保模块引入变得更简单。
     alias: {
       'vue$': 'vue/dist/vue.esm.js', // 在给定对象的键后的末尾添加 $,以表示精准匹配: 必须以XXX结尾
-      '@': resolve('src'),
+      '@': resolve('src'), // js文件中@即表示为src文件夹
     }
   },
   // 决定如何处理项目中的不同类型的模块
