@@ -7070,3 +7070,22 @@
 {"name":"hexo","hostname":"WIN7U-20160323S","pid":5412,"level":20,"msg":"Rendering post: \u001b[35m2018/07/01/Yarn和NPM命令/index.html\u001b[39m","time":"2018-08-01T15:58:37.676Z","v":0}
 {"name":"hexo","hostname":"WIN7U-20160323S","pid":5412,"level":30,"msg":"Catch you later","time":"2018-08-01T15:59:55.639Z","v":0}
 {"name":"hexo","hostname":"WIN7U-20160323S","pid":5412,"level":20,"msg":"Database saved","time":"2018-08-01T15:59:55.681Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Hexo version: \u001b[35m3.7.1\u001b[39m","time":"2018-10-31T15:22:38.213Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Working directory: \u001b[35mD:\\3.Study\\shmilybaozi.github.io\\\u001b[39m","time":"2018-10-31T15:22:38.217Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Config loaded: \u001b[35mD:\\3.Study\\shmilybaozi.github.io\\_config.yml\u001b[39m","time":"2018-10-31T15:22:38.463Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-deployer-git\u001b[39m","time":"2018-10-31T15:22:38.564Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-index\u001b[39m","time":"2018-10-31T15:22:38.572Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-archive\u001b[39m","time":"2018-10-31T15:22:38.577Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-category\u001b[39m","time":"2018-10-31T15:22:38.583Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-json-content\u001b[39m","time":"2018-10-31T15:22:38.651Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-search\u001b[39m","time":"2018-10-31T15:22:38.657Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-tag\u001b[39m","time":"2018-10-31T15:22:38.661Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-helper-qrcode\u001b[39m","time":"2018-10-31T15:22:38.678Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-prism-plugin\u001b[39m","time":"2018-10-31T15:22:38.961Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-marked\u001b[39m","time":"2018-10-31T15:22:38.972Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-ejs\u001b[39m","time":"2018-10-31T15:22:38.980Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-stylus\u001b[39m","time":"2018-10-31T15:22:38.982Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-server\u001b[39m","time":"2018-10-31T15:22:39.132Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-less\u001b[39m","time":"2018-10-31T15:22:39.253Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Script loaded: \u001b[35mthemes\\indigo\\scripts\\plugins.js\u001b[39m","time":"2018-10-31T15:22:39.259Z","v":0}
+{"name":"hexo","hostname":"JiarenTang","pid":15268,"level":20,"msg":"Database saved","time":"2018-10-31T15:22:39.265Z","v":0}

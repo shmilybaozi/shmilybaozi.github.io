@@ -25,25 +25,25 @@ ga('send', 'pageview');
     
     
     
-    <title>src目录结构分析 | 拈花把酒偏折煞世人情狂</title>
+    <title>path.join和 path.resolve区别 | 拈花把酒偏折煞世人情狂</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Vue">
-    <meta name="description" content="src目录结构分析">
-<meta name="keywords" content="Vue">
+    <meta name="keywords" content="">
+    <meta name="description" content="path.join()">
+<meta name="keywords" content="前端,JavaScript,CSS,HTML,Vue,React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="src目录结构分析">
-<meta property="og:url" content="https://shmilybaozi.github.io/2018/07/08/src目录结构分析/index.html">
+<meta property="og:title" content="path.join和 path.resolve区别">
+<meta property="og:url" content="https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/index.html">
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
-<meta property="og:description" content="src目录结构分析">
+<meta property="og:description" content="path.join()">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-10-28T06:26:00.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="src目录结构分析">
-<meta name="twitter:description" content="src目录结构分析">
+<meta name="twitter:title" content="path.join和 path.resolve区别">
+<meta name="twitter:description" content="path.join()">
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
@@ -137,7 +137,7 @@ ga('send', 'pageview');
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">src目录结构分析</div>
+        <div class="flex-col header-title ellipsis">path.join和 path.resolve区别</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -159,15 +159,13 @@ ga('send', 'pageview');
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">src目录结构分析</h1>
+        <h1 class="title">path.join和 path.resolve区别</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-07-08T15:15:22.000Z" itemprop="datePublished" class="page-time">
-  2018-07-08
+                <time datetime="2018-08-06T02:11:44.000Z" itemprop="datePublished" class="page-time">
+  2018-08-06
 </time>
 
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
 
             
         </h5>
@@ -184,71 +182,29 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#src目录结构分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">src目录结构分析</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#path-join"><span class="post-toc-number">1.</span> <span class="post-toc-text">path.join()</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-src目录结构分析"
+<article id="post-path-join和path-resolve区别"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">src目录结构分析</h1>
+        <h1 class="post-card-title">path.join和 path.resolve区别</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-07-08 23:15:22" datetime="2018-07-08T15:15:22.000Z"  itemprop="datePublished">2018-07-08</time>
+            <time class="post-time" title="2018-08-06 10:11:44" datetime="2018-08-06T02:11:44.000Z"  itemprop="datePublished">2018-08-06</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
-
 
 
             
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>src目录结构及命名原则分析</p>
-<a id="more"></a>
-<!-- markdownlint-disable MD002 MD041-->
-<h2 id="src目录结构分析"><a href="#src目录结构分析" class="headerlink" title="src目录结构分析"></a>src目录结构分析</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">.</span>
-├── adapter -----<span class="token operator">></span> 适配器,处理拿到的数据,整理成对象或者别的能直接使用的数据
-<span class="token operator">|</span>   ├── report.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名：与api命名一致<span class="token punctuation">)</span>
-<span class="token operator">|</span>   └── selectPhoneNumber.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名: 与api命名一致<span class="token punctuation">)</span>
-<span class="token operator">|</span>
-├── api -----<span class="token operator">></span> 通过后台接口拿到数据
-<span class="token operator">|</span>   ├── report.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
-<span class="token operator">|</span>   └── selectPhoneNumber.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
-<span class="token operator">|</span>
-├── assets
-<span class="token operator">|</span>
-├── components -----<span class="token operator">></span> 组件,通过在 views 中的 vue 文件的调用并传入数据,然后渲染在页面中,复用性强
-<span class="token operator">|</span>   ├── AreaCard.vue -----<span class="token operator">></span>  <span class="token punctuation">(</span>Pascal命名<span class="token punctuation">)</span>
-<span class="token operator">|</span>   ├── Chart.vue
-<span class="token operator">|</span>   └── Entry.vue
-<span class="token operator">|</span>
-├── router -----<span class="token operator">></span> 路由
-<span class="token operator">|</span>   └── index.js
-<span class="token operator">|</span>
-├── store -----<span class="token operator">></span> vuex
-<span class="token operator">|</span>   ├── modules -----<span class="token operator">></span> vuex模块
-<span class="token operator">|</span>   <span class="token operator">|</span>   ├── clothesSize.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
-<span class="token operator">|</span>   <span class="token operator">|</span>   ├── login.js
-<span class="token operator">|</span>   <span class="token operator">|</span>   └── user.js
-<span class="token operator">|</span>   └── index.js
-<span class="token operator">|</span>
-├── util -----<span class="token operator">></span> 自己封装的js
-<span class="token operator">|</span>   ├── fetch.js
-<span class="token operator">|</span>   └── index.js
-<span class="token operator">|</span>
-└── views -----<span class="token operator">></span> 页面展示
-    ├── Report.vue -----<span class="token operator">></span> <span class="token punctuation">(</span>Pascal命名: 与api命名一致<span class="token punctuation">)</span>
-    ├── Dormitory
-    <span class="token operator">|</span>   ├── DormitoryStudent.vue -----<span class="token operator">></span> <span class="token punctuation">(</span>Pascal命名<span class="token punctuation">)</span>
-    <span class="token operator">|</span>   ├── Edit.vue
-    <span class="token operator">|</span>   └── index.vue
-    └── Home.vue
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>api —–&gt; adapter —–&gt; views —–&gt; 同一个页面：这三个文件夹的命名对应一致 或者 api、adapter 与 views 中的文件夹命名一致</p>
-
+            <a id="more"></a>
+<!-- markdownlint-disable MD041 MD002-->
+<h2 id="path-join"><a href="#path-join" class="headerlink" title="path.join()"></a>path.join()</h2>
         </div>
 
         <blockquote class="post-copyright">
@@ -282,8 +238,6 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
-
 
             
 <div class="page-share-wrap">
@@ -292,7 +246,7 @@ ga('send', 'pageview');
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&title=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&pic=https://shmilybaozi.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/&title=《path.join和 path.resolve区别》 — 拈花把酒偏折煞世人情狂&pic=https://shmilybaozi.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -302,22 +256,22 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&title=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&source=src目录结构及命名原则分析" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/&title=《path.join和 path.resolve区别》 — 拈花把酒偏折煞世人情狂&source=一个前端小白的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&via=https://shmilybaozi.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《path.join和 path.resolve区别》 — 拈花把酒偏折煞世人情狂&url=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/&via=https://shmilybaozi.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -340,18 +294,18 @@ ga('send', 'pageview');
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/07/29/Git更新与推送流程/" id="post-prev" class="post-nav-link">
+      <a href="/2018/08/07/Vue中使用Webpack总结/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Git更新与推送流程</h4>
+        <h4 class="title">Vue中使用 Webpack总结</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/07/01/前端开发环境配置/" id="post-next" class="post-nav-link">
+      <a href="/2018/07/29/Git更新与推送流程/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">前端开发环境配置</h4>
+        <h4 class="title">Git更新与推送流程</h4>
       </a>
     </div>
   
@@ -461,7 +415,7 @@ ga('send', 'pageview');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&title=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&pic=https://shmilybaozi.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/&title=《path.join和 path.resolve区别》 — 拈花把酒偏折煞世人情狂&pic=https://shmilybaozi.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -471,22 +425,22 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&title=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&source=src目录结构及命名原则分析" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/&title=《path.join和 path.resolve区别》 — 拈花把酒偏折煞世人情狂&source=一个前端小白的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《src目录结构分析》 — 拈花把酒偏折煞世人情狂&url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/&via=https://shmilybaozi.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《path.join和 path.resolve区别》 — 拈花把酒偏折煞世人情狂&url=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/&via=https://shmilybaozi.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shmilybaozi.github.io/2018/07/08/src目录结构分析/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shmilybaozi.github.io/2018/08/06/path-join和path-resolve区别/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -497,7 +451,7 @@ ga('send', 'pageview');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3a0W4iMQwFUP7/p+kzogzXdkypdOapYmeGnKyUhGvfbvF1f7qSO1/96/Xnz29Ivnd04eHh4Y2Hnn/B8z3Xf19/klz5mPHw8PC2eclinQwo3yR635WPGQ8PD+97eNXNIyclk4iHh4f3f3l5SFEddELCw8PD+wZe/urqsbgXWCRH6sNZCx4eHl7M6x1///bvlfoeHh4e3riqnh9852Wt+bO/vA0PDw9vgVc9LifR7fxoXm3kenMnHh4e3lFeHuDOf/xPtpl8Qh/ux8PDw1vg5SX8pNyVH8Tz5b5Z9Kp2KODh4eEVeUmZv7ooTxoCJuDC/yQeHh5eizc5EPdmsYrpNRbg4eHh7fF6B+V8w+g1H/RiiDcFMDw8PLxDvN4yfX1/NcgY1e6upw8PDw9vgVctcVVbrKqTkm8e+bN4eHh4G7zqL/dJOFs9Fs8nHQ8PD+8sbxLITtoFVtoCnp/Cw8PDW+AlQ6wWtPJ2hHkCHQUZeHh4eEd5vQapPGjIm6iSp8qf4OHh4S3wqgv9pF3gVANWXmbDw8PD2+P14oZeLDtv5Kq+Ew8PD2+blyy4+SJehTV3s6RdAA8PD+8Qb1L4rwYN+RI/CYUf3oaHh4e3wMsPwZNBJxtPtR0hD0Tw8PDwNnjVMn/11ffidRaMh4eHt8GbLOLV8lhe/s8xt+o+g4eHh3eU11v659FD84jc6yzDw8PDO8SrbgbXL01C2HyybsULDw8Pb493KiaoDi4vtiUbz8t34uHh4S3wqkttXuDP8+N8WkeRBB4eHt5RXq/kXz1AVycxCTWi8eDh4eGt8XrBQT4R1V6GXizysqcMDw8P74t5vah3Hj18aGPAw8PDa/GSI281mEjKXc24GQ8PD2+NVw0Cek/1woj8wI2Hh4f3GV71B38eQ+SMyVPH6nt4eHh477/3BzhWu2BQDN16AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3aQU7EMAwFUO5/6UFiBYJ0vu2kw0ivK1RomtdFHL7z8RFfj6/r98/f76zuXz+VvDH5+9GFh4eH15r66loBVndWYyafI/+syZzx8PDwTvOSoauA64+YF4DkqeV9PDw8vJfyqst6Arse7XoOeHh4eO/F2xUo9EbDw8PD+w+8JIxICkM+wiTUOJK14OHh4cW8SQPsVT/f1N/Dw8PDK3bVq0t8b+TkqeZs8fDw8A7wqq2pPFDYG/vmhwyi/xjw8PDwxrzqC3rN/r3jX7/lCRIPDw9vEy95QW/zPTlEVW2DPal+eHh4eGNevhWeYCaRcfUgwo/7eHh4eDfyqtFtNciohhdJoYpqCB4eHt6Yd09wkBeSCSlqgOHh4eFt4hXy3XjznRSepHlWPXqFh4eHdw8vWXCr7a7esapqpBvNEA8PD28rr3ekqdrWqiJ7hadeBPHw8PD6vOr2t7cJTtpaecGIxsTDw8M7zMtLxWSj3MP01nw8PDy8E7wENplujskPIvTiEjw8PLxdvGRBz+OJvJ2Wl5beh8DDw8O7h5dEA9Wm/j2nHpYKPDw8vAO8nNE8lVCMX8v/B/QOXeHh4eFt4lVj2XxD3DtSsK384OHh4W3lVePRSfDaCyZGxQMPDw/vAC9ZXq+nVV36m43/+afEw8PD28TrLcHVrXYe1/a24Mtn8fDw8G7hXQ/aQ+akCf6Pd+Hh4eEd4FUbV/nynWN6JaTcYMPDw8PbxHsUr2RBz0vLrlK0nC0eHh7eAV5+5aFDL36dxBl4eHh49/N6x6R60+01tCbxMR4eHt45Xr4o57/Nt9T5Vr5cwPDw8PBeysuj26gpFWfMybN4eHh478JL4oDe0YSEEZUTPDw8vGO8ahhRjRjyTfDkKNi2rAUPDw8v3aOWJ5EEE9VNcP5xm908PDw8vD7vE22HfYKx4+KhAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
