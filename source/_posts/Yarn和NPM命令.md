@@ -1,14 +1,14 @@
 ---
-title: Yarn和 NPM命令
-date: 2018-07-01 15:34:24
+title: 'Yarn 和 NPM 命令'
 tags:
- - NPM
- - Yarn
+  - NPM
+  - Yarn
 categories: 前端工具
-description: Yarn和 NPM命令
+description: Yarn 和 NPM 命令
+date: 2018-07-01 15:34:24
 ---
 
-Yarn和 NPM命令
+Yarn 和 NPM 命令
 
 <!-- more -->
 <!-- markdownlint-disable MD041 MD002-->

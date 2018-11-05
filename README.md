@@ -93,13 +93,24 @@ hexo g -d # 文件生成后立即部署网站
 
 ### 开始使用
 
+一些 hexo 命令
+
 ```bash
-# 一些 hexo 命令
-hexo new <title> # 新建一篇文章
+hexo new [layout] <title> # 新建一篇文章, 如果标题包含空格的话, 请使用引号括起来。layout 为 draft 即为草稿
+hexo publish [layout] <filename> # 发表草稿, 如果标题包含空格的话, 请使用引号括起来。
 hexo g # hexo generate 生成静态文件
 hexo g -d # 文件生成后立即部署网站
 hexo s # hexo server 启动服务器
 hexo d # hexo deploy 部署网站
+hexo clean # 清除缓存
+hexo s --debug # 调试模式, 更改了配置或文章后随时刷新页面来查看效果
+```
+
+### 部署文章的步骤
+
+```bash
+hexo clean # 清除缓存
+hexo g -d # 文件生成后立即部署网站
 ```
 
 ### 将 hexo 中的代码提交到 git 上

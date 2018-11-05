@@ -1,13 +1,11 @@
 ---
-title: Vue中使用 Webpack总结
-date: 2018-08-07 15:42:09
+title: 'Vue中使用 Webpack总结'
 tags:
   - Vue
   - Webpack
-categories: 
-  - Vue
-  - Webpack
-description:  Vue中使用 Webpack总结
+categories: Vue
+description: Vue中使用 Webpack总结
+date: 2018-08-07 15:42:09
 ---
 
 Webpack 打包工具(模块打包器)
@@ -23,7 +21,7 @@ Vue中 关于Webpack的配置文件有四个: (vue-cli版本@2.9.6)
   - webpack.base.conf.js 主要配置文件
   - webpack.dev.conf.js 开发环境配置文件
   - webpack.prod.conf.js 生产环境配置文件
-  - webpack.test.conf.js 需要单元测试时的配置文件
+  - webpack.test.conf.js 需要单元测试时的配置文件(不选择单元测试则没有该文件)
 
 ## webpack.base.conf.js
 
@@ -71,7 +69,7 @@ module.exports = {
     publicPath: 'assets/', // 相对于 HTML 页面
     publicPath: '../assets/', // 相对于 HTML 页面
     publicPath: '', // 相对于 HTML 页面（目录相同）
-    // Vue中: 判断环境变量的值,去对应的环境变量中寻找设置
+    // Vue中: 判断环境变量的值,去对应的环境变量中寻找设置 config 文件夹中的 index.js
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath // 默认为"/"，一般会修改为"./"
       : config.dev.assetsPublicPath // 默认为"/"
@@ -82,8 +80,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     // 创建 import 或 require 的别名，来确保模块引入变得更简单。
     alias: {
-      'vue$': 'vue/dist/vue.esm.js', // 在给定对象的键后的末尾添加 $,以表示精准匹配: 必须以XXX结尾
-      '@': resolve('src'), // js文件中@即表示为src文件夹
+      'vue$': 'vue/dist/vue.esm.js', // 在给定对象的键后的末尾添加 $,以表示精准匹配: 必须以 XXX 结尾
+      '@': resolve('src'), // js文件!!!中 @ 即表示为 src 文件夹, html 和 css 路径中不是
     }
   },
   // 决定如何处理项目中的不同类型的模块
@@ -141,3 +139,5 @@ module.exports = {
   }
 }
 ```
+
+在最新的 vue-cli 3.0 中, webpack 中的设置都隐藏到了 vue 内部, 通过设置 `vue.config.js` 来覆盖相关 webpack 设置

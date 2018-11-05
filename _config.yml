@@ -83,12 +83,12 @@ deploy:
   branch: master
 
 
-# local search ---> themes: material
+# local search for themes: material
 # search:
 # 	path: search.xml
 # 	field: all
 
-# local search ---> themes: indigo
+# local search for themes: indigo
 jsonContent:
   meta: false
   pages: false
@@ -108,8 +108,9 @@ jsonContent:
     categories: false
     tags: true
 
+# 代码高亮插件 for themes: indigo
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
-  theme: 'ghcolors' #duotone-light base16-ateliersulphurpool.light
+  theme: 'default' #duotone-light base16-ateliersulphurpool.light
   line_number: true    # default false
   # custom_css: 'path/to/your/custom.css'     # optional

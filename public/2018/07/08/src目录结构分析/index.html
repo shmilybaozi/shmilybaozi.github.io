@@ -40,19 +40,19 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="src目录结构分析">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-28T06:26:00.537Z">
+<meta property="og:updated_time" content="2018-11-05T14:33:43.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="src目录结构分析">
 <meta name="twitter:description" content="src目录结构分析">
     
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-<link rel="stylesheet" href="/css/prism-ghcolors.css" type="text/css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
@@ -218,7 +218,7 @@ ga('send', 'pageview');
 <span class="token operator">|</span>   ├── report.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
 <span class="token operator">|</span>   └── selectPhoneNumber.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
 <span class="token operator">|</span>
-├── assets
+├── assets -----<span class="token operator">></span> 存放图片
 <span class="token operator">|</span>
 ├── components -----<span class="token operator">></span> 组件,通过在 views 中的 vue 文件的调用并传入数据,然后渲染在页面中,复用性强
 <span class="token operator">|</span>   ├── AreaCard.vue -----<span class="token operator">></span>  <span class="token punctuation">(</span>Pascal命名<span class="token punctuation">)</span>
@@ -235,7 +235,7 @@ ga('send', 'pageview');
 <span class="token operator">|</span>   <span class="token operator">|</span>   └── user.js
 <span class="token operator">|</span>   └── index.js
 <span class="token operator">|</span>
-├── util -----<span class="token operator">></span> 自己封装的js
+├── util -----<span class="token operator">></span> 自己封装的 js
 <span class="token operator">|</span>   ├── fetch.js
 <span class="token operator">|</span>   └── index.js
 <span class="token operator">|</span>
@@ -247,7 +247,7 @@ ga('send', 'pageview');
     <span class="token operator">|</span>   └── index.vue
     └── Home.vue
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>api —–&gt; adapter —–&gt; views —–&gt; 同一个页面：这三个文件夹的命名对应一致 或者 api、adapter 与 views 中的文件夹命名一致</p>
+<p>注：api —–&gt; adapter —–&gt; views —–&gt; 同一个页面：这三个文件夹的命名对应一致 或者 api、adapter 与 views 中的文件夹命名一致</p>
 
         </div>
 
@@ -256,7 +256,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-10-28T06:26:00.537Z" itemprop="dateUpdated">2018-10-28 14:26:00</time>
+    最后更新时间：<time datetime="2018-11-05T14:33:43.820Z" itemprop="dateUpdated">2018-11-05 22:33:43</time>
 </span><br>
 
 
@@ -510,7 +510,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 </script>
 
-<script src="/js/main.js"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -530,7 +530,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </li>
 </template>
 
-<script src="/js/search.js" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 

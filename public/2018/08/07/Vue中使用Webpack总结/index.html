@@ -40,19 +40,19 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="Vue中使用 Webpack总结">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-28T06:26:00.535Z">
+<meta property="og:updated_time" content="2018-11-05T14:53:13.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue中使用 Webpack总结">
 <meta name="twitter:description" content="Vue中使用 Webpack总结">
     
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-<link rel="stylesheet" href="/css/prism-ghcolors.css" type="text/css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
@@ -167,7 +167,7 @@ ga('send', 'pageview');
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/Webpack/">Webpack</a></li></ul></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
 
             
         </h5>
@@ -198,7 +198,7 @@ ga('send', 'pageview');
             <time class="post-time" title="2018-08-07 15:42:09" datetime="2018-08-07T07:42:09.000Z"  itemprop="datePublished">2018-08-07</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/Webpack/">Webpack</a></li></ul></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
 
 
 
@@ -215,7 +215,7 @@ ga('send', 'pageview');
 <li>webpack.base.conf.js 主要配置文件</li>
 <li>webpack.dev.conf.js 开发环境配置文件</li>
 <li>webpack.prod.conf.js 生产环境配置文件</li>
-<li>webpack.test.conf.js 需要单元测试时的配置文件</li>
+<li>webpack.test.conf.js 需要单元测试时的配置文件(不选择单元测试则没有该文件)</li>
 </ul>
 </li>
 </ul>
@@ -262,7 +262,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     publicPath<span class="token punctuation">:</span> <span class="token string">'assets/'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 相对于 HTML 页面</span>
     publicPath<span class="token punctuation">:</span> <span class="token string">'../assets/'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 相对于 HTML 页面</span>
     publicPath<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 相对于 HTML 页面（目录相同）</span>
-    <span class="token comment" spellcheck="true">// Vue中: 判断环境变量的值,去对应的环境变量中寻找设置</span>
+    <span class="token comment" spellcheck="true">// Vue中: 判断环境变量的值,去对应的环境变量中寻找设置 config 文件夹中的 index.js</span>
     publicPath<span class="token punctuation">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>NODE_ENV <span class="token operator">===</span> <span class="token string">'production'</span>
       <span class="token operator">?</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>assetsPublicPath <span class="token comment" spellcheck="true">// 默认为"/"，一般会修改为"./"</span>
       <span class="token punctuation">:</span> config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>assetsPublicPath <span class="token comment" spellcheck="true">// 默认为"/"</span>
@@ -273,8 +273,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.vue'</span><span class="token punctuation">,</span> <span class="token string">'.json'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token comment" spellcheck="true">// 创建 import 或 require 的别名，来确保模块引入变得更简单。</span>
     alias<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token string">'vue$'</span><span class="token punctuation">:</span> <span class="token string">'vue/dist/vue.esm.js'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 在给定对象的键后的末尾添加 $,以表示精准匹配: 必须以XXX结尾</span>
-      <span class="token string">'@'</span><span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// js文件中@即表示为src文件夹</span>
+      <span class="token string">'vue$'</span><span class="token punctuation">:</span> <span class="token string">'vue/dist/vue.esm.js'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 在给定对象的键后的末尾添加 $,以表示精准匹配: 必须以 XXX 结尾</span>
+      <span class="token string">'@'</span><span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// js文件!!!中 @ 即表示为 src 文件夹, html 和 css 路径中不是</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token comment" spellcheck="true">// 决定如何处理项目中的不同类型的模块</span>
@@ -332,6 +332,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在最新的 vue-cli 3.0 中, webpack 中的设置都隐藏到了 vue 内部, 通过设置 <code>vue.config.js</code> 来覆盖相关 webpack 设置</p>
 
         </div>
 
@@ -340,7 +341,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-10-28T06:26:00.535Z" itemprop="dateUpdated">2018-10-28 14:26:00</time>
+    最后更新时间：<time datetime="2018-11-05T14:53:13.350Z" itemprop="dateUpdated">2018-11-05 22:53:13</time>
 </span><br>
 
 
@@ -421,14 +422,21 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/11/05/hexo文章模板设置/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">hexo文章模板设置</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/08/06/path-join和path-resolve区别/" id="post-next" class="post-nav-link">
+      <a href="/2018/08/06/path.join和path.resolve区别/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">path.join和 path.resolve区别</h4>
+        <h4 class="title">path.join 和 path.resolve区别</h4>
       </a>
     </div>
   
@@ -587,7 +595,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 </script>
 
-<script src="/js/main.js"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -607,7 +615,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </li>
 </template>
 
-<script src="/js/search.js" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 

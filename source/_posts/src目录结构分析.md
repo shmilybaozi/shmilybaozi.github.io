@@ -23,7 +23,7 @@ src目录结构及命名原则分析
 |   ├── report.js -----> (驼峰命名)
 |   └── selectPhoneNumber.js -----> (驼峰命名)
 |
-├── assets
+├── assets -----> 存放图片
 |
 ├── components -----> 组件,通过在 views 中的 vue 文件的调用并传入数据,然后渲染在页面中,复用性强
 |   ├── AreaCard.vue ----->  (Pascal命名)
@@ -40,7 +40,7 @@ src目录结构及命名原则分析
 |   |   └── user.js
 |   └── index.js
 |
-├── util -----> 自己封装的js
+├── util -----> 自己封装的 js
 |   ├── fetch.js
 |   └── index.js
 |
@@ -53,4 +53,4 @@ src目录结构及命名原则分析
     └── Home.vue
 ```
 
-api -----> adapter -----> views -----> 同一个页面：这三个文件夹的命名对应一致 或者 api、adapter 与 views 中的文件夹命名一致
+注：api -----> adapter -----> views -----> 同一个页面：这三个文件夹的命名对应一致 或者 api、adapter 与 views 中的文件夹命名一致
