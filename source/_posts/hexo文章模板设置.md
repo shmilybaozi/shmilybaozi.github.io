@@ -1,7 +1,7 @@
 ---
 title: hexo文章模板设置
 tags: Hexo
-categories: Hexo
+categories: 前端工具
 description: hexo文章模板设置
 date: 2018-11-05 22:57:26
 ---
