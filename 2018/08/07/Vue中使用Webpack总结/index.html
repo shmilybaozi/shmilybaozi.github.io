@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-123238835-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="bTHrd7qmcZXwZoycOMqMnoGZJzH-danwukxdOMTKqCk">
+    
+    
+    
+    
+    <title>Vue中使用 Webpack总结 | 拈花把酒偏折煞世人情狂</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Vue,Webpack">
+    <meta name="description" content="Vue中使用 Webpack总结">
+<meta name="keywords" content="Vue,Webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue中使用 Webpack总结">
+<meta property="og:url" content="https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/index.html">
+<meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
+<meta property="og:description" content="Vue中使用 Webpack总结">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-25T02:26:43.815Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue中使用 Webpack总结">
+<meta name="twitter:description" content="Vue中使用 Webpack总结">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/about" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">心要野</h5>
+          <a href="mailto:shmilybaozi@163.com" title="shmilybaozi@163.com" class="mail">shmilybaozi@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/shmilybaozi" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/2995301335" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vue中使用 Webpack总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vue中使用 Webpack总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-07T07:42:09.000Z" itemprop="datePublished" class="page-time">
+  2018-08-07
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Webpack结构"><span class="post-toc-number">1.</span> <span class="post-toc-text">Webpack结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#webpack-base-conf-js"><span class="post-toc-number">2.</span> <span class="post-toc-text">webpack.base.conf.js</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Vue中使用Webpack总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vue中使用 Webpack总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-07 15:42:09" datetime="2018-08-07T07:42:09.000Z"  itemprop="datePublished">2018-08-07</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Webpack 打包工具(模块打包器)</p>
+<a id="more"></a>
+<!-- markdownlint-disable MD041 MD002-->
+<h2 id="Webpack结构"><a href="#Webpack结构" class="headerlink" title="Webpack结构"></a>Webpack结构</h2><p>Vue中 关于Webpack的配置文件有四个: (vue-cli版本@2.9.6)</p>
+<ul>
+<li>build文件夹<ul>
+<li>webpack.base.conf.js 主要配置文件</li>
+<li>webpack.dev.conf.js 开发环境配置文件</li>
+<li>webpack.prod.conf.js 生产环境配置文件</li>
+<li>webpack.test.conf.js 需要单元测试时的配置文件(不选择单元测试则没有该文件)</li>
+</ul>
+</li>
+</ul>
+<h2 id="webpack-base-conf-js"><a href="#webpack-base-conf-js" class="headerlink" title="webpack.base.conf.js"></a>webpack.base.conf.js</h2><pre class="line-numbers language-js"><code class="language-js"><span class="token string">'use strict'</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> utils <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./utils'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../config'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> vueLoaderConfig <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./vue-loader.conf'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> resolve <span class="token punctuation">(</span>dir<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'..'</span><span class="token punctuation">,</span> dir<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> createLintingRule <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  test<span class="token punctuation">:</span> <span class="token regex">/\.(js|vue)$/</span><span class="token punctuation">,</span>
+  loader<span class="token punctuation">:</span> <span class="token string">'eslint-loader'</span><span class="token punctuation">,</span>
+  enforce<span class="token punctuation">:</span> <span class="token string">'pre'</span><span class="token punctuation">,</span>
+  include<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    formatter<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'eslint-friendly-formatter'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    emitWarning<span class="token punctuation">:</span> <span class="token operator">!</span>config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>showEslintErrorsInOverlay
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 基础目录，绝对路径，用于从配置中解析入口起点(entry point)和 loader</span>
+  context<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 入口配置: 可以配置多入口</span>
+  entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    app<span class="token punctuation">:</span> <span class="token string">'./src/main.js'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 出口配置</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 出口路径: path必须是绝对路径</span>
+    path<span class="token punctuation">:</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>assetsRoot<span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// 出口文件名</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'[name].js'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// [name]即入口名称</span>
+    <span class="token comment" spellcheck="true">// 对于按需加载(on-demand-load)或加载外部资源(external resources)（如图片、文件等）来说，output.publicPath 是很重要的选项。</span>
+    <span class="token comment" spellcheck="true">// 该选项的值是以 runtime(运行时) 或 loader(载入时) 所创建的每个 URL 为前缀。因此，在多数情况下，此选项的值都会以/结束。</span>
+    <span class="token comment" spellcheck="true">// 可能以下情况中的一种:</span>
+    publicPath<span class="token punctuation">:</span> <span class="token string">'https://cdn.example.com/assets/'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// CDN（总是 HTTPS 协议）</span>
+    publicPath<span class="token punctuation">:</span> <span class="token string">'//cdn.example.com/assets/'</span><span class="token punctuation">,</span> <span class="token operator">/</span><span class="token operator">/</span> CDN（协议相同）
+    publicPath<span class="token punctuation">:</span> <span class="token string">'/assets/'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 相对于服务(server-relative)</span>
+    publicPath<span class="token punctuation">:</span> <span class="token string">'assets/'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 相对于 HTML 页面</span>
+    publicPath<span class="token punctuation">:</span> <span class="token string">'../assets/'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 相对于 HTML 页面</span>
+    publicPath<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 相对于 HTML 页面（目录相同）</span>
+    <span class="token comment" spellcheck="true">// Vue中: 判断环境变量的值,去对应的环境变量中寻找设置 config 文件夹中的 index.js</span>
+    publicPath<span class="token punctuation">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>NODE_ENV <span class="token operator">===</span> <span class="token string">'production'</span>
+      <span class="token operator">?</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>assetsPublicPath <span class="token comment" spellcheck="true">// 默认为"/"，一般会修改为"./"</span>
+      <span class="token punctuation">:</span> config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>assetsPublicPath <span class="token comment" spellcheck="true">// 默认为"/"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 配置模块如何解析</span>
+  resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 自动解析确定的扩展: 能够使用户在引入模块时不带扩展</span>
+    extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.vue'</span><span class="token punctuation">,</span> <span class="token string">'.json'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// 创建 import 或 require 的别名，来确保模块引入变得更简单。</span>
+    alias<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'vue$'</span><span class="token punctuation">:</span> <span class="token string">'vue/dist/vue.esm.js'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 在给定对象的键后的末尾添加 $,以表示精准匹配: 必须以 XXX 结尾</span>
+      <span class="token string">'@'</span><span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// js文件!!!中 @ 即表示为 src 文件夹, html 和 css 路径中不是</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 决定如何处理项目中的不同类型的模块</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 创建模块时，匹配请求的规则数组。这些规则能够修改模块的创建方式。这些规则能够对模块(module)应用 loader，或者修改解析器(parser)</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token operator">...</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>useEslint <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token function">createLintingRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.vue$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'vue-loader'</span><span class="token punctuation">,</span>
+        options<span class="token punctuation">:</span> vueLoaderConfig
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'babel-loader'</span><span class="token punctuation">,</span>
+        include<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'node_modules/webpack-dev-server/client'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.(png|jpe?g|gif|svg)(\?.*)?$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'url-loader'</span><span class="token punctuation">,</span>
+        options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          limit<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+          name<span class="token punctuation">:</span> utils<span class="token punctuation">.</span><span class="token function">assetsPath</span><span class="token punctuation">(</span><span class="token string">'img/[name].[hash:7].[ext]'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'url-loader'</span><span class="token punctuation">,</span>
+        options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          limit<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+          name<span class="token punctuation">:</span> utils<span class="token punctuation">.</span><span class="token function">assetsPath</span><span class="token punctuation">(</span><span class="token string">'media/[name].[hash:7].[ext]'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.(woff2?|eot|ttf|otf)(\?.*)?$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'url-loader'</span><span class="token punctuation">,</span>
+        options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          limit<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+          name<span class="token punctuation">:</span> utils<span class="token punctuation">.</span><span class="token function">assetsPath</span><span class="token punctuation">(</span><span class="token string">'fonts/[name].[hash:7].[ext]'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  node<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// prevent webpack from injecting useless setImmediate polyfill because Vue</span>
+    <span class="token comment" spellcheck="true">// source contains it (although only uses it if it's native).</span>
+    setImmediate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// prevent webpack from injecting mocks to Node native modules</span>
+    <span class="token comment" spellcheck="true">// that does not make sense for the client</span>
+    dgram<span class="token punctuation">:</span> <span class="token string">'empty'</span><span class="token punctuation">,</span>
+    fs<span class="token punctuation">:</span> <span class="token string">'empty'</span><span class="token punctuation">,</span>
+    net<span class="token punctuation">:</span> <span class="token string">'empty'</span><span class="token punctuation">,</span>
+    tls<span class="token punctuation">:</span> <span class="token string">'empty'</span><span class="token punctuation">,</span>
+    child_process<span class="token punctuation">:</span> <span class="token string">'empty'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在最新的 vue-cli 3.0 中, webpack 中的设置都隐藏到了 vue 内部, 通过设置 <code>vue.config.js</code> 来覆盖相关 webpack 设置</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-02-25T02:26:43.815Z" itemprop="dateUpdated">2019-02-25 10:26:43</time>
+</span><br>
+
+
+        
+        我说人生的世事总无常 你又何必介怀心上
+        
+    </div>
+    
+    <footer>
+        <a href="https://shmilybaozi.github.io">
+            <img src="/img/avatar.jpg" alt="心要野">
+            心要野
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Webpack/">Webpack</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/&title=《Vue中使用 Webpack总结》 — 拈花把酒偏折煞世人情狂&pic=https://shmilybaozi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/&title=《Vue中使用 Webpack总结》 — 拈花把酒偏折煞世人情狂&source=Webpack 打包工具(模块打包器)" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue中使用 Webpack总结》 — 拈花把酒偏折煞世人情狂&url=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/&via=https://shmilybaozi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/11/05/hexo文章模板设置/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">hexo文章模板设置</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/08/06/path.join和path.resolve区别/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">path.join 和 path.resolve区别</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lR19hDUE0Q2h2eaOzABAwsxT-gzGzoHsz",
+            appKey: "1dAq0UusjAuDeTy6Tegon4PB",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        给我买辣条吗
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>心要野 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/&title=《Vue中使用 Webpack总结》 — 拈花把酒偏折煞世人情狂&pic=https://shmilybaozi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/&title=《Vue中使用 Webpack总结》 — 拈花把酒偏折煞世人情狂&source=Webpack 打包工具(模块打包器)" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue中使用 Webpack总结》 — 拈花把酒偏折煞世人情狂&url=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/&via=https://shmilybaozi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shmilybaozi.github.io/2018/08/07/Vue中使用Webpack总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3cyW7jMBQEQP//T3uuMzAs9VsoGIPSKXCipRiAZLqFvF7x8f44/v788+vqJ5/Xub7X8oGHh4c3fvTrWyZnfbtOgkzOyu+Fh4eHd473bUZNFoD83HwOTxaP6/vi4eHh/Q5vAqhuuPHw8PD+D14eTCQTfbJRzgcUDw8P70ne/NKTR8yjh4NZCx4eHl7Mq25/f+HrI/0eHh4e3rhVr1b4WyXZ5Ar/XA0PDw/vAK9aaOXb3Gr82ivGop/Ew8PDO8brPW7+EPNlphpV4OHh4Z3mJaX+daE1GazJwN0sOXh4eHiHeb2qqQrOz53UZnh4eHgneKNRaVX4yRJSmPSrSwIeHh7eEq9QJj348sHCooWHh4d3gJdED9U6P38D6jpoqA5rOcbFw8PDa/GSR+y9EFANZLeqtWhLjYeHhzfmVcPTanmfxLjzaq2yFOLh4eG9h/+3s1r2V4uxSQyRv/J1U4Ph4eHhLfF64zGJCfIAolqV3fzFgIeHh7fE6wUHkyCjiq9WcTeRBB4eHt4Srzo1b8UEk9Kr9yvBw8PD2+X1Xg7oTev551txMB4eHt4Wr1o+5VNzr8TKt+/lrAUPDw9viVfdnk5i33yK7w0oHh4e3jO83ktXveIqjyeqAe7yO2V4eHh4g1aoWuH3CrNJ/ZYMKB4eHt5pXm8TnIS58+Hr/TweHh7eM7zdCb0X177i4ya2wMPDwzvGq073vdetegHHhIqHh4e3y3sXjxM1fy/siKJkPDw8vAO86oTbK7SuB6U6rAsYPDw8vDGveunJWfmGON++33wXDw8P7xhvVM8XP8+v1sxXkm/j4eHhPc6rBgS96DaPHr7GH3h4eHg/w8uD3a3FoLl9x8PDwzvGy0uvhJqXYdfPM9kn4+Hh4Z3j9f7gn4S2Obs6oKN+Dw8PD+/+vn8A8LI1ysdE70sAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '但盼风雨来 能留你在此';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '即使天无雨 我亦在此地';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
