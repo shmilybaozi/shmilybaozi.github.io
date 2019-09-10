@@ -62,17 +62,17 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif')
 
 - `join` 是把各个 path 片段连接在一起， `resolve` 把`'/'` 当成根目录
 
-  ```js
-  path.join('/a', '/b') // '/a/b'
-  path.resolve('/a', '/b') // '/b'
-  ```
+```js
+path.join('/a', '/b') // '/a/b'
+path.resolve('/a', '/b') // '/b'
+```
 
 - `join` 直接拼接字段，`resolve` 解析路径并返回绝对路径
 
-  ```js
-  path.join('a', 'b1', '..', 'b2')
-  // 'a/b2'
+```js
+path.join('a', 'b1', '..', 'b2')
+// 'a/b2'
 
-  path.resolve('a', 'b1', '..', 'b2')
-  // '/home/myself/node/a/b2'
-  ```
+path.resolve('a', 'b1', '..', 'b2')
+// '/home/myself/node/a/b2'
+```
