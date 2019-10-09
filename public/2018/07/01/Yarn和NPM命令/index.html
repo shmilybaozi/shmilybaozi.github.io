@@ -40,7 +40,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="Yarn 和 NPM 命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-06T04:40:54.395Z">
+<meta property="og:updated_time" content="2019-10-09T09:10:36.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yarn 和 NPM 命令">
 <meta name="twitter:description" content="Yarn 和 NPM 命令">
@@ -184,7 +184,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Yarn和-NPM命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">Yarn和 NPM命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NPM-常用命令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">NPM 常用命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用淘宝-NPM-镜像"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用淘宝 NPM 镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Yarn升级"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Yarn升级</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过msi安装升级-Yarn"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">通过msi安装升级 Yarn</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NPM加版本号安装"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">NPM加版本号安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NPM-加-latest-安装"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">NPM 加 latest 安装</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Yarn和-NPM命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">Yarn和 NPM命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NPM-常用命令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">NPM 常用命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用淘宝-NPM-镜像"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用淘宝 NPM 镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Yarn升级"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Yarn升级</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过msi安装升级-Yarn"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">通过msi安装升级 Yarn</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NPM加版本号安装"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">NPM加版本号安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NPM-加-latest-安装"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">NPM 加 latest 安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新-package-json-的所有依赖"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">更新 package.json 的所有依赖</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -300,6 +300,28 @@ ga('send', 'pageview');
 <p>这样的话，就可以不使用msi，而还是采用更高大上的命令行模式安装最新版的yarn了。<br>我们可以用<code>npm view yarn version</code>，查看NPM上的最新版本。</p>
 <h4 id="NPM-加-latest-安装"><a href="#NPM-加-latest-安装" class="headerlink" title="NPM 加 latest 安装"></a>NPM 加 latest 安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@latest -g
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="更新-package-json-的所有依赖"><a href="#更新-package-json-的所有依赖" class="headerlink" title="更新 package.json 的所有依赖"></a>更新 package.json 的所有依赖</h3><ul>
+<li>安装 <code>npm-check-updates</code></li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">yarn global add npm-check-updates
+<span class="token comment" spellcheck="true"># OR</span>
+<span class="token function">npm</span> i npm-check-updates -g
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>手动执行 <code>ncu</code> （或 <code>npm-check-updates</code>）检查更新</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">ncu
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>更新 <code>dependencies</code> 到新版本</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">ncu -u
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>更新全部 <code>dependencies</code> 到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -&gt; ^4.3.0)：</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">ncu -a
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
         </div>
 
@@ -308,7 +330,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-06T04:40:54.395Z" itemprop="dateUpdated">2018-11-06 12:40:54</time>
+    最后更新时间：<time datetime="2019-10-09T09:10:36.132Z" itemprop="dateUpdated">2019-10-09 17:10:36</time>
 </span><br>
 
 
@@ -488,7 +510,7 @@ ga('send', 'pageview');
         </p>
     </div>
     <div class="bottom">
-        <p><span>心要野 &copy; 2018</span>
+        <p><span>心要野 &copy; 2018 - 2019</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>

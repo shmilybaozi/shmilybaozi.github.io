@@ -40,7 +40,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="path.join 和 path.resolve区别">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-06T04:40:54.397Z">
+<meta property="og:updated_time" content="2019-10-09T06:37:41.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="path.join 和 path.resolve区别">
 <meta name="twitter:description" content="path.join 和 path.resolve区别">
@@ -242,20 +242,20 @@ path<span class="token punctuation">.</span><span class="token function">resolve
 <span class="token string">'/home/myself/node/wwwroot/static_files/gif/image.gif'</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h2><ul>
-<li><p><code>join</code> 是把各个 path 片段连接在一起， <code>resolve</code> 把<code>&#39;/&#39;</code> 当成根目录</p>
+<li><code>join</code> 是把各个 path 片段连接在一起， <code>resolve</code> 把<code>&#39;/&#39;</code> 当成根目录</li>
+</ul>
 <pre class="line-numbers language-js"><code class="language-js">path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/a'</span><span class="token punctuation">,</span> <span class="token string">'/b'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// '/a/b'</span>
 path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/a'</span><span class="token punctuation">,</span> <span class="token string">'/b'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// '/b'</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>join</code> 直接拼接字段，<code>resolve</code> 解析路径并返回绝对路径</p>
+<ul>
+<li><code>join</code> 直接拼接字段，<code>resolve</code> 解析路径并返回绝对路径</li>
+</ul>
 <pre class="line-numbers language-js"><code class="language-js">path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b1'</span><span class="token punctuation">,</span> <span class="token string">'..'</span><span class="token punctuation">,</span> <span class="token string">'b2'</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true">// 'a/b2'</span>
 
 path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b1'</span><span class="token punctuation">,</span> <span class="token string">'..'</span><span class="token punctuation">,</span> <span class="token string">'b2'</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true">// '/home/myself/node/a/b2'</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
 
         </div>
 
@@ -264,7 +264,7 @@ path<span class="token punctuation">.</span><span class="token function">resolve
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-06T04:40:54.397Z" itemprop="dateUpdated">2018-11-06 12:40:54</time>
+    最后更新时间：<time datetime="2019-10-09T06:37:41.260Z" itemprop="dateUpdated">2019-10-09 14:37:41</time>
 </span><br>
 
 
@@ -451,7 +451,7 @@ path<span class="token punctuation">.</span><span class="token function">resolve
         </p>
     </div>
     <div class="bottom">
-        <p><span>心要野 &copy; 2018</span>
+        <p><span>心要野 &copy; 2018 - 2019</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
