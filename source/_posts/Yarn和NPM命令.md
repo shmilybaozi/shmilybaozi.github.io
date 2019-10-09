@@ -72,3 +72,31 @@ npm install yarn@1.9.2 -g
 ```bash
 npm install yarn@latest -g
 ```
+
+### 更新 package.json 的所有依赖
+
+- 安装 `npm-check-updates`
+
+```bash
+yarn global add npm-check-updates
+# OR
+npm i npm-check-updates -g
+```
+
+- 手动执行 `ncu` （或 `npm-check-updates`）检查更新
+
+```bash
+ncu
+```
+
+- 更新 `dependencies` 到新版本
+
+```bash
+ncu -u
+```
+
+- 更新全部 `dependencies` 到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -> ^4.3.0)：
+
+```bash
+ncu -a
+```

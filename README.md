@@ -57,7 +57,7 @@
 ### 安装
 
 ```bash
-# npm 或者 cnpm 安装
+# npm 安装
 npm install -g hexo-cli
 ```
 
