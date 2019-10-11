@@ -40,7 +40,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="Yarn 和 NPM 命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-09T09:10:36.132Z">
+<meta property="og:updated_time" content="2019-10-11T15:45:01.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yarn 和 NPM 命令">
 <meta name="twitter:description" content="Yarn 和 NPM 命令">
@@ -184,7 +184,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Yarn和-NPM命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">Yarn和 NPM命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NPM-常用命令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">NPM 常用命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用淘宝-NPM-镜像"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用淘宝 NPM 镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Yarn升级"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Yarn升级</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过msi安装升级-Yarn"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">通过msi安装升级 Yarn</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NPM加版本号安装"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">NPM加版本号安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NPM-加-latest-安装"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">NPM 加 latest 安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新-package-json-的所有依赖"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">更新 package.json 的所有依赖</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Yarn和-NPM命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">Yarn和 NPM命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NPM-常用命令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">NPM 常用命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用淘宝-NPM-镜像"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用淘宝 NPM 镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Yarn安装和升级"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Yarn安装和升级</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过msi安装升级-Yarn"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">通过msi安装升级 Yarn</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NPM加版本号安装"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">NPM加版本号安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NPM-加-latest-安装"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">NPM 加 latest 安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新-package-json-的所有依赖"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">更新 package.json 的所有依赖</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -225,12 +225,12 @@ ga('send', 'pageview');
 <tr>
 <td>安装</td>
 <td>新版的NodeJS 已经集成了NPM</td>
-<td><code>npm install -g yarn</code></td>
+<td><code>npm install -g yarn</code> 或者<a href="https://yarnpkg.com/lang/zh-hans/docs/install/#windows-stable" target="_blank" rel="noopener">通过msi安装升级</a></td>
 </tr>
 <tr>
 <td>升级</td>
 <td><code>npm install npm -g</code></td>
-<td>见<a href="#Yarn升级">Yarn升级</a></td>
+<td>见<a href="#Yarn安装和升级">Yarn安装和升级</a></td>
 </tr>
 <tr>
 <td>安装所有的依赖包</td>
@@ -290,14 +290,19 @@ ga('send', 'pageview');
 <li>使用<code>npm help &lt;command&gt;</code>可查看某条命令的详细帮助，例如<code>npm help install</code></li>
 </ul>
 <h3 id="使用淘宝-NPM-镜像"><a href="#使用淘宝-NPM-镜像" class="headerlink" title="使用淘宝 NPM 镜像"></a>使用淘宝 NPM 镜像</h3><p><a href="/2018/07/01/前端开发环境配置/#NPM和Yarn添加淘宝镜像">NPM和 Yarn添加淘宝镜像</a></p>
-<h3 id="Yarn升级"><a href="#Yarn升级" class="headerlink" title="Yarn升级"></a>Yarn升级</h3><h4 id="通过msi安装升级-Yarn"><a href="#通过msi安装升级-Yarn" class="headerlink" title="通过msi安装升级 Yarn"></a>通过msi安装升级 Yarn</h4><p><a href="https://yarnpkg.com/lang/zh-hans/docs/install/#windows-stable" target="_blank" rel="noopener">下载最新的yarn更新包</a></p>
+<h3 id="Yarn安装和升级"><a href="#Yarn安装和升级" class="headerlink" title="Yarn安装和升级"></a>Yarn安装和升级</h3><h4 id="通过msi安装升级-Yarn"><a href="#通过msi安装升级-Yarn" class="headerlink" title="通过msi安装升级 Yarn"></a>通过msi安装升级 Yarn</h4><p><a href="https://yarnpkg.com/lang/zh-hans/docs/install/#windows-stable" target="_blank" rel="noopener">下载最新的yarn更新包</a></p>
 <ul>
 <li>通过 msi 安装的 yarn 并不会覆盖通过 npm 安装的 yarn，两者同时存在。卸载的话，也是分开卸载的。</li>
 </ul>
-<h4 id="NPM加版本号安装"><a href="#NPM加版本号安装" class="headerlink" title="NPM加版本号安装"></a>NPM加版本号安装</h4><p>虽然，我们不能通过<code>npm install yarn -g</code>的方法，获得最新的yarn。但是，我们已经知道了yarn的最新版的版本号，所以，我们可以直接指定版本号进行安装。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@1.9.2 -g
+<h4 id="NPM加版本号安装"><a href="#NPM加版本号安装" class="headerlink" title="NPM加版本号安装"></a>NPM加版本号安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn -g
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这样的话，就可以不使用msi，而还是采用更高大上的命令行模式安装最新版的yarn了。<br>我们可以用<code>npm view yarn version</code>，查看NPM上的最新版本。</p>
+<p>这样的话，就可以不使用msi，而还是采用更高大上的命令行模式安装最新版的yarn了。<br>我们可以用<code>npm view yarn version</code>，查看NPM上的最新版本号。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@最新版本号 -g
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在官方给出的<a href="https://yarnpkg.com/zh-Hans/docs/install#alternatives-stable" target="_blank" rel="noopener">备选安装方案</a>中提到</p>
+<blockquote>
+<p>注意: 一般来说, 不推荐通过 npm 安装 Yarn 在用基于 Node 的包管理器安装 Yarn 时，该包未被签名，并且只通过基本的 SHA1 散列进行唯一完整性检查。<br>这在安装系统级应用时有安全风险。<br>因为这些原因，高度推荐用你的操作系统最适合的方式来安装 Yarn。</p>
+</blockquote>
 <h4 id="NPM-加-latest-安装"><a href="#NPM-加-latest-安装" class="headerlink" title="NPM 加 latest 安装"></a>NPM 加 latest 安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@latest -g
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="更新-package-json-的所有依赖"><a href="#更新-package-json-的所有依赖" class="headerlink" title="更新 package.json 的所有依赖"></a>更新 package.json 的所有依赖</h3><ul>
@@ -330,7 +335,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-10-09T09:10:36.132Z" itemprop="dateUpdated">2019-10-09 17:10:36</time>
+    最后更新时间：<time datetime="2019-10-11T15:45:01.495Z" itemprop="dateUpdated">2019-10-11 23:45:01</time>
 </span><br>
 
 

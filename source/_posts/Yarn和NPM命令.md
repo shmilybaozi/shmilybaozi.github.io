@@ -20,8 +20,8 @@ Yarn 和 NPM 命令
 
 | 命令 | NPM | Yarn |
 |---|---|---|
-| 安装 | 新版的NodeJS 已经集成了NPM | `npm install -g yarn` |
-| 升级 | `npm install npm -g` | 见[Yarn升级](#Yarn升级) |
+| 安装 | 新版的NodeJS 已经集成了NPM | `npm install -g yarn` 或者[通过msi安装升级](https://yarnpkg.com/lang/zh-hans/docs/install/#windows-stable) |
+| 升级 | `npm install npm -g` | 见[Yarn安装和升级](#Yarn安装和升级) |
 | 安装所有的依赖包   | `npm install` | `yarn` |
 | 安装某个依赖 | `npm install [package] --save/-S` | `yarn add [package]` |
 | 安装某个开发时依赖项目 | `npm install [package] --save-dev/-D` | `yarn add [package] --dev/-D` |
@@ -48,7 +48,7 @@ npm -v
 
 [NPM和 Yarn添加淘宝镜像](/2018/07/01/前端开发环境配置/#NPM和Yarn添加淘宝镜像)
 
-### Yarn升级
+### Yarn安装和升级
 
 #### 通过msi安装升级 Yarn
 
@@ -58,14 +58,22 @@ npm -v
 
 #### NPM加版本号安装
 
-虽然，我们不能通过`npm install yarn -g`的方法，获得最新的yarn。但是，我们已经知道了yarn的最新版的版本号，所以，我们可以直接指定版本号进行安装。
-
 ```bash
-npm install yarn@1.9.2 -g
+npm install yarn -g
 ```
 
 这样的话，就可以不使用msi，而还是采用更高大上的命令行模式安装最新版的yarn了。
-我们可以用`npm view yarn version`，查看NPM上的最新版本。
+我们可以用`npm view yarn version`，查看NPM上的最新版本号。
+
+```bash
+npm install yarn@最新版本号 -g
+```
+
+在官方给出的[备选安装方案](https://yarnpkg.com/zh-Hans/docs/install#alternatives-stable)中提到
+
+> 注意: 一般来说, 不推荐通过 npm 安装 Yarn 在用基于 Node 的包管理器安装 Yarn 时，该包未被签名，并且只通过基本的 SHA1 散列进行唯一完整性检查。
+> 这在安装系统级应用时有安全风险。
+> 因为这些原因，高度推荐用你的操作系统最适合的方式来安装 Yarn。
 
 #### NPM 加 latest 安装
 

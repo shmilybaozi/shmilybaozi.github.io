@@ -40,7 +40,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="src目录结构分析">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-09T06:37:41.260Z">
+<meta property="og:updated_time" content="2019-10-11T15:31:46.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="src目录结构分析">
 <meta name="twitter:description" content="src目录结构分析">
@@ -210,39 +210,39 @@ ga('send', 'pageview');
 <a id="more"></a>
 <!-- markdownlint-disable MD002 MD041-->
 <h2 id="src目录结构分析"><a href="#src目录结构分析" class="headerlink" title="src目录结构分析"></a>src目录结构分析</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">.</span>
-├── adapter -----<span class="token operator">></span> 适配器,处理拿到的数据,整理成对象或者别的能直接使用的数据
-<span class="token operator">|</span>   ├── report.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名：与api命名一致<span class="token punctuation">)</span>
-<span class="token operator">|</span>   └── selectPhoneNumber.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名: 与api命名一致<span class="token punctuation">)</span>
+├── adapter <span class="token comment" spellcheck="true"># 适配器,处理拿到的数据,整理成对象或者别的能直接使用的数据</span>
+<span class="token operator">|</span>   ├── report.js <span class="token comment" spellcheck="true"># (驼峰命名：与api命名一致)</span>
+<span class="token operator">|</span>   └── selectPhoneNumber.js <span class="token comment" spellcheck="true"># (驼峰命名: 与api命名一致)</span>
 <span class="token operator">|</span>
-├── api -----<span class="token operator">></span> 通过后台接口拿到数据
-<span class="token operator">|</span>   ├── report.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
-<span class="token operator">|</span>   └── selectPhoneNumber.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
+├── api <span class="token comment" spellcheck="true"># 通过后台接口拿到数据</span>
+<span class="token operator">|</span>   ├── report.js <span class="token comment" spellcheck="true"># (驼峰命名)</span>
+<span class="token operator">|</span>   └── selectPhoneNumber.js <span class="token comment" spellcheck="true"># (驼峰命名)</span>
 <span class="token operator">|</span>
-├── assets -----<span class="token operator">></span> 存放图片
+├── assets <span class="token comment" spellcheck="true"># 存放图片</span>
 <span class="token operator">|</span>
-├── components -----<span class="token operator">></span> 组件,通过在 views 中的 vue 文件的调用并传入数据,然后渲染在页面中,复用性强
-<span class="token operator">|</span>   ├── AreaCard.vue -----<span class="token operator">></span>  <span class="token punctuation">(</span>Pascal命名<span class="token punctuation">)</span>
+├── components <span class="token comment" spellcheck="true"># 组件,通过在 views 中的 vue 文件的调用并传入数据,然后渲染在页面中,复用性强</span>
+<span class="token operator">|</span>   ├── AreaCard.vue <span class="token comment" spellcheck="true">#  (Pascal命名)</span>
 <span class="token operator">|</span>   ├── Chart.vue
 <span class="token operator">|</span>   └── Entry.vue
 <span class="token operator">|</span>
-├── router -----<span class="token operator">></span> 路由
+├── router <span class="token comment" spellcheck="true"># 路由</span>
 <span class="token operator">|</span>   └── index.js
 <span class="token operator">|</span>
-├── store -----<span class="token operator">></span> vuex
-<span class="token operator">|</span>   ├── modules -----<span class="token operator">></span> vuex模块
-<span class="token operator">|</span>   <span class="token operator">|</span>   ├── clothesSize.js -----<span class="token operator">></span> <span class="token punctuation">(</span>驼峰命名<span class="token punctuation">)</span>
+├── store <span class="token comment" spellcheck="true"># vuex</span>
+<span class="token operator">|</span>   ├── modules <span class="token comment" spellcheck="true"># vuex模块</span>
+<span class="token operator">|</span>   <span class="token operator">|</span>   ├── clothesSize.js <span class="token comment" spellcheck="true"># (驼峰命名)</span>
 <span class="token operator">|</span>   <span class="token operator">|</span>   ├── login.js
 <span class="token operator">|</span>   <span class="token operator">|</span>   └── user.js
 <span class="token operator">|</span>   └── index.js
 <span class="token operator">|</span>
-├── util -----<span class="token operator">></span> 自己封装的 js
+├── util <span class="token comment" spellcheck="true"># 自己封装的 js</span>
 <span class="token operator">|</span>   ├── fetch.js
 <span class="token operator">|</span>   └── index.js
 <span class="token operator">|</span>
-└── views -----<span class="token operator">></span> 页面展示
-    ├── Report.vue -----<span class="token operator">></span> <span class="token punctuation">(</span>Pascal命名: 与api命名一致<span class="token punctuation">)</span>
+└── views <span class="token comment" spellcheck="true"># 页面展示</span>
+    ├── Report.vue <span class="token comment" spellcheck="true"># (Pascal命名: 与api命名一致)</span>
     ├── Dormitory
-    <span class="token operator">|</span>   ├── DormitoryStudent.vue -----<span class="token operator">></span> <span class="token punctuation">(</span>Pascal命名<span class="token punctuation">)</span>
+    <span class="token operator">|</span>   ├── DormitoryStudent.vue <span class="token comment" spellcheck="true"># (Pascal命名)</span>
     <span class="token operator">|</span>   ├── Edit.vue
     <span class="token operator">|</span>   └── index.vue
     └── Home.vue
@@ -256,7 +256,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-10-09T06:37:41.260Z" itemprop="dateUpdated">2019-10-09 14:37:41</time>
+    最后更新时间：<time datetime="2019-10-11T15:31:46.166Z" itemprop="dateUpdated">2019-10-11 23:31:46</time>
 </span><br>
 
 
