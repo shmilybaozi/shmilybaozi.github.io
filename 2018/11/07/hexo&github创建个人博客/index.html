@@ -40,7 +40,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="hexo&amp;github创建个人博客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-25T06:52:19.193Z">
+<meta property="og:updated_time" content="2019-10-09T12:07:29.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo&amp;github创建个人博客">
 <meta name="twitter:description" content="hexo&amp;github创建个人博客">
@@ -247,7 +247,7 @@ ga('send', 'pageview');
 </ul>
 <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p><a href="http://hexo.io" target="_blank" rel="noopener">hexo官网</a></p>
 <p><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">hexo github</a></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># npm 或者 cnpm 安装</span>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># npm 安装</span>
 <span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>在刚刚 <code>git clone</code> 的这个文件夹中, 执行：</p>
@@ -264,34 +264,22 @@ hexo init
   repository: git@github.com:shmilybaozi/shmilybaozi.github.io.git
   branch: master
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># hexo generate 生成静态文件</span>
-hexo g
-<span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span>
-hexo g -d
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo g <span class="token comment" spellcheck="true"># hexo generate 生成静态文件</span>
+hexo g -d <span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>一些 hexo 命令</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 新建一篇文章, 如果标题包含空格的话, 请使用引号括起来。layout 为 draft 即为草稿</span>
-hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span>
-<span class="token comment" spellcheck="true"># 发表草稿, 如果标题包含空格的话, 请使用引号括起来。</span>
-hexo publish <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>filename<span class="token operator">></span>
-<span class="token comment" spellcheck="true"># hexo generate 生成静态文件</span>
-hexo g
-<span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span>
-hexo g -d
-<span class="token comment" spellcheck="true"># hexo server 启动服务器</span>
-hexo s
-<span class="token comment" spellcheck="true"># hexo deploy 部署网站</span>
-hexo d
-<span class="token comment" spellcheck="true"># 清除缓存</span>
-hexo clean
-<span class="token comment" spellcheck="true"># 调试模式, 更改了配置或文章后随时刷新页面来查看效果</span>
-hexo s --debug
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="部署文章的步骤"><a href="#部署文章的步骤" class="headerlink" title="部署文章的步骤"></a>部署文章的步骤</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 清除缓存</span>
-hexo clean
-<span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span>
-hexo g -d
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span> <span class="token comment" spellcheck="true"># 新建一篇文章, 如果标题包含空格的话, 请使用引号括起来。layout 为 draft 即为草稿</span>
+hexo publish <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>filename<span class="token operator">></span> <span class="token comment" spellcheck="true"># 发表草稿, 如果标题包含空格的话, 请使用引号括起来。</span>
+hexo g <span class="token comment" spellcheck="true"># hexo generate 生成静态文件</span>
+hexo g -d <span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span>
+hexo s <span class="token comment" spellcheck="true"># hexo server 启动服务器</span>
+hexo d <span class="token comment" spellcheck="true"># hexo deploy 部署网站</span>
+hexo clean <span class="token comment" spellcheck="true"># 清除缓存</span>
+hexo s --debug <span class="token comment" spellcheck="true"># 调试模式, 更改了配置或文章后随时刷新页面来查看效果</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="部署文章的步骤"><a href="#部署文章的步骤" class="headerlink" title="部署文章的步骤"></a>部署文章的步骤</h3><pre class="line-numbers language-bash"><code class="language-bash">hexo clean <span class="token comment" spellcheck="true"># 清除缓存</span>
+hexo g -d <span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="将-hexo-中的代码提交到-git-上"><a href="#将-hexo-中的代码提交到-git-上" class="headerlink" title="将 hexo 中的代码提交到 git 上"></a>将 hexo 中的代码提交到 git 上</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> add <span class="token keyword">.</span>
 <span class="token function">git</span> commit -m <span class="token string">"..."</span>
 <span class="token function">git</span> push origin hexo
@@ -306,7 +294,7 @@ hexo g -d
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-02-25T06:52:19.193Z" itemprop="dateUpdated">2019-02-25 14:52:19</time>
+    最后更新时间：<time datetime="2019-10-09T12:07:29.196Z" itemprop="dateUpdated">2019-10-09 20:07:29</time>
 </span><br>
 
 
@@ -387,7 +375,14 @@ hexo g -d
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/09/09/前端调试方法/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">前端调试方法</h4>
+      </a>
+    </div>
   
 
   
