@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-123238835-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 <!-- End Google Analytics -->
 
 
@@ -209,6 +209,7 @@ ga('send', 'pageview');
             <p>src目录结构及命名原则分析</p>
 <a id="more"></a>
 <!-- markdownlint-disable MD002 MD041-->
+
 <h2 id="src目录结构分析"><a href="#src目录结构分析" class="headerlink" title="src目录结构分析"></a>src目录结构分析</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">.</span>
 ├── adapter <span class="token comment" spellcheck="true"># 适配器,处理拿到的数据,整理成对象或者别的能直接使用的数据</span>
 <span class="token operator">|</span>   ├── report.js <span class="token comment" spellcheck="true"># (驼峰命名：与api命名一致)</span>
@@ -245,8 +246,7 @@ ga('send', 'pageview');
     <span class="token operator">|</span>   ├── DormitoryStudent.vue <span class="token comment" spellcheck="true"># (Pascal命名)</span>
     <span class="token operator">|</span>   ├── Edit.vue
     <span class="token operator">|</span>   └── index.vue
-    └── Home.vue
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    └── Home.vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注：api —–&gt; adapter —–&gt; views —–&gt; 同一个页面：这三个文件夹的命名对应一致 或者 api、adapter 与 views 中的文件夹命名一致</p>
 
         </div>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-123238835-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="bTHrd7qmcZXwZoycOMqMnoGZJzH-danwukxdOMTKqCk">
+    
+    
+    
+    
+    <title>Vue子组件内改变prop报错的解决方案 | 拈花把酒偏折煞世人情狂</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="报错">
+    <meta name="description" content="Vue子组件内改变prop报错的解决方案">
+<meta name="keywords" content="报错">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue子组件内改变prop报错的解决方案">
+<meta property="og:url" content="https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/index.html">
+<meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
+<meta property="og:description" content="Vue子组件内改变prop报错的解决方案">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-18T11:23:07.350Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue子组件内改变prop报错的解决方案">
+<meta name="twitter:description" content="Vue子组件内改变prop报错的解决方案">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/about" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">心要野</h5>
+          <a href="mailto:shmilybaozi@163.com" title="shmilybaozi@163.com" class="mail">shmilybaozi@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/shmilybaozi" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/2995301335" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vue子组件内改变prop报错的解决方案</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vue子组件内改变prop报错的解决方案</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-15T03:19:15.000Z" itemprop="datePublished" class="page-time">
+  2019-10-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vue子组件内改变prop报错的解决方案"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vue子组件内改变prop报错的解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这个-prop-用来传递一个初始值"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">这个 prop 用来传递一个初始值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这个-prop-以一种原始的值传入且需要进行转换"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">这个 prop 以一种原始的值传入且需要进行转换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#利用-sync-修饰符"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">利用 .sync 修饰符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数组或对象的-prop，传递的是引用"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">数组或对象的 prop，传递的是引用</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Vue子组件内改变prop报错的解决方案"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vue子组件内改变prop报错的解决方案</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-15 11:19:15" datetime="2019-10-15T03:19:15.000Z"  itemprop="datePublished">2019-10-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Vue子组件内改变prop报错的解决方案</p>
+<a id="more"></a>
+<!-- markdownlint-disable MD041 MD002-->
+
+<h2 id="Vue子组件内改变prop报错的解决方案"><a href="#Vue子组件内改变prop报错的解决方案" class="headerlink" title="Vue子组件内改变prop报错的解决方案"></a>Vue子组件内改变prop报错的解决方案</h2><p><a href="https://cn.vuejs.org/v2/guide/components-props.html#%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81" target="_blank" rel="noopener">单项数据流</a></p>
+<blockquote>
+<p>所有的 prop 都使得其父子 prop 之间形成了一个<strong>单向下行绑定</strong>：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。</p>
+<p>额外的，每次父级组件发生更新时，子组件中所有的 prop 都将会刷新为最新的值。这意味着你<strong>不应该</strong>在一个子组件内部改变 prop。如果你这样做了，Vue 会在浏览器的控制台中发出警告。</p>
+</blockquote>
+<p>Vue警告</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>Vue warn<span class="token punctuation">]</span>: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: <span class="token string">"isLoading"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="这个-prop-用来传递一个初始值"><a href="#这个-prop-用来传递一个初始值" class="headerlink" title="这个 prop 用来传递一个初始值"></a>这个 prop 用来传递一个初始值</h4><p>这个子组件接下来希望将其作为一个本地的 prop 数据来使用。在这种情况下，最好定义一个本地的 data 属性并将这个 prop 用作其初始值：</p>
+<pre class="line-numbers language-js"><code class="language-js">props<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'initialCounter'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+data<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    counter<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>initialCounter <span class="token comment" spellcheck="true">// 子组件操作 counter</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="这个-prop-以一种原始的值传入且需要进行转换"><a href="#这个-prop-以一种原始的值传入且需要进行转换" class="headerlink" title="这个 prop 以一种原始的值传入且需要进行转换"></a>这个 prop 以一种原始的值传入且需要进行转换</h4><p>在这种情况下，最好使用这个 prop 的值来定义一个计算属性：</p>
+<pre class="line-numbers language-js"><code class="language-js">props<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'size'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  normalizedSize<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>size<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="利用-sync-修饰符"><a href="#利用-sync-修饰符" class="headerlink" title="利用 .sync 修饰符"></a>利用 <code>.sync</code> 修饰符</h4><p><code>.sync</code> 相当于对一个 prop 进行“双向绑定”</p>
+<p>父组件引用代码：</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>comp</span> <span class="token attr-name">:foo.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>comp</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>会被拓展成：</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>comp</span> <span class="token attr-name">:foo</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bar<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">@update:</span>foo</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>val <span class="token punctuation">=</span><span class="token punctuation">></span> bar <span class="token punctuation">=</span> val<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>comp</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!-- 即 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>comp</span> <span class="token attr-name">:foo</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bar<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">@update:</span>foo</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bar <span class="token punctuation">=</span> $event<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>comp</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>当子组件需要更新 foo 的值时，它只需要显式地触发一个更新事件：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'update:foo'</span><span class="token punctuation">,</span> newValue<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>注意带有 <code>.sync</code> 修饰符的 <code>v-bind</code> 不能和表达式一起使用 (例如 <code>:title.sync=”doc.title + ‘!’”</code> 是无效的)。取而代之的是，你只能提供你想要绑定的<strong>属性名(即，变量名称)</strong>，类似 <code>v-model</code>。</p>
+<p>当我们用一个对象同时设置多个 prop 的时候，也可以将这个 <code>.sync</code> 修饰符和 <code>v-bind</code> 配合使用：</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>comp</span> <span class="token attr-name">v-bind.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>doc<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>comp</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样会把 <code>doc</code> 对象中的每一个属性 (如 <code>title</code>) 都作为一个独立的 prop 传进去，然后各自添加用于更新的 <code>v-on</code> 监听器。</p>
+<h4 id="数组或对象的-prop，传递的是引用"><a href="#数组或对象的-prop，传递的是引用" class="headerlink" title="数组或对象的 prop，传递的是引用"></a>数组或对象的 prop，传递的是引用</h4><p>当 prop 是对象的时候，传给子组件的是该对象的引用，类似于指针的一个东西，指向内存中的一个数据空间。</p>
+<p>而子组件通过 <code>objectName.prop</code> 去操作该 <code>object</code> 的时候，更改了内存空间的数据，但是并没有更改内存空间的位置，指针仍然是指向这块内存空间的，所以不会有警告报错。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-18T11:23:07.350Z" itemprop="dateUpdated">2019-10-18 19:23:07</time>
+</span><br>
+
+
+        
+        我说人生的世事总无常 你又何必介怀心上
+        
+    </div>
+    
+    <footer>
+        <a href="https://shmilybaozi.github.io">
+            <img src="/img/avatar.jpg" alt="心要野">
+            心要野
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/报错/">报错</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/&title=《Vue子组件内改变prop报错的解决方案》 — 拈花把酒偏折煞世人情狂&pic=https://shmilybaozi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/&title=《Vue子组件内改变prop报错的解决方案》 — 拈花把酒偏折煞世人情狂&source=Vue子组件内改变prop报错的解决方案" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue子组件内改变prop报错的解决方案》 — 拈花把酒偏折煞世人情狂&url=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/&via=https://shmilybaozi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/10/18/Vue事件总线（EventBus）使用介绍/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vue事件总线（EventBus）使用介绍</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/09/前端调试方法/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">前端调试方法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lR19hDUE0Q2h2eaOzABAwsxT-gzGzoHsz",
+            appKey: "1dAq0UusjAuDeTy6Tegon4PB",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        给我买辣条吗
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>心要野 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/&title=《Vue子组件内改变prop报错的解决方案》 — 拈花把酒偏折煞世人情狂&pic=https://shmilybaozi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/&title=《Vue子组件内改变prop报错的解决方案》 — 拈花把酒偏折煞世人情狂&source=Vue子组件内改变prop报错的解决方案" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue子组件内改变prop报错的解决方案》 — 拈花把酒偏折煞世人情狂&url=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/&via=https://shmilybaozi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shmilybaozi.github.io/2019/10/15/Vue子组件内改变prop报错的解决方案/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADOUlEQVR42u3awW4qQQwEQP7/p3nXSC8s3R4igak9RZAsW+bg2D23W3zdf1z5Kz9ff3S3R3f4//Xru93+4sLGxsb+EPb98kpI1x/86N2kHElpknd/eQZsbGzsdezrx7r+nWt8UrK8XeV/+8SIjY2NjR2w80aY/9X1KIKNjY2Nndwub1r54JFvfpICYWNjY38nO1nW5M0sL0Fb0PYOL9ilYWNjY789O09F3//nP8m3sbGxsd+YfS+v/G6zUeFVMcMTBTY2NvYidt4AZuXIh4S8CSWjTlQybGxs7BXsdoV0ErK2y/3Z6j8qJTY2NvaXsWeP2La92SGeRPGwY2NjY2OvY7ctZLasHx6viY/4FLMXNjY29gp2/pGzseRV48esQIUOGxsb+2PZ+aOfxAN5iDuLKOovBhsbG3sR+6SBtQ+dtLGk6MnaKx+NsLGxsT+d3Y4Tw/YwColPgt4n5cDGxsZeym4P3+RNJfk5j2nbgzu/vIKNjY29jp0Hq686/pg0v3w4qccnbGxs7EXs2Wp+FtCeHPFpo4goeMbGxsZewU5C05bUlq996PN2i42Njb2PPQto26V82/xmAUM0rmBjY2OvY+cHZdrVf9uKkod+Mlclow42Njb2Una+WjoKWY8P8bSLsHqphI2Njf2B7HYAOGla7QgxC32fFBobGxt7Hfvk+Ev9kXFp8rHn6KQSNjY29iL2LJpt8fnAkIcQ+ZoMGxsbeyt7Njy0jSdvgXmBZq0UGxsbex+7DVbzRc/ss/KAYVZ6bGxs7K3sWeNpj+8kwUP+O23j/CUewMbGxv5wdtuKZuHu7DpZbN2SCxsbG3sdO/mAkwLlA0be2E6WWdjY2Nj72O1D5+/OFlh1fNtGDtjY2NhL2W3sOgsYZkuo/HeixoyNjY29gj1b9LRRQdtmktK3Lbb+xrCxsbE/hJ1f+bDRDjDtCHEeWmBjY2PvY5+ME22LOo+T2xJH3yQ2Njb2CnZy61eVrP0aZodynowl2NjY2F/MTv71n0UCs0B3OBRhY2NjfzH7Vcdx2vEmP+JT5NvY2NjYi9j5AuhkUTUbP9rYuBhFsLGxsVew2wVN/gF5lNtiTsqKjY2NvYj9DzX941/0FA84AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '但盼风雨来 能留你在此';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '即使天无雨 我亦在此地';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-123238835-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 <!-- End Google Analytics -->
 
 
@@ -40,7 +40,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="hexo文章模板设置">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-25T06:37:00.000Z">
+<meta property="og:updated_time" content="2019-10-18T11:23:07.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo文章模板设置">
 <meta name="twitter:description" content="hexo文章模板设置">
@@ -209,6 +209,7 @@ ga('send', 'pageview');
             <p>hexo文章模板设置</p>
 <a id="more"></a>
 <!-- markdownlint-disable MD041 MD002-->
+
 <h2 id="hexo文章模板设置"><a href="#hexo文章模板设置" class="headerlink" title="hexo文章模板设置"></a>hexo文章模板设置</h2><p>hexo 项目文件夹中的 scaffold 文件夹中的 <code>post.md</code> 和 <code>draft.md</code></p>
 <p>对应就是 <code>hexo new [layout] &lt;title&gt;</code> 中的 <code>layout</code> , 默认为 <code>post</code>, 草稿为 <code>draft</code>, 如果标题包含空格的话，请使用引号括起来。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">---
@@ -222,24 +223,21 @@ date: <span class="token punctuation">{</span><span class="token punctuation">{<
 点击阅读前文前, 首页能看到的文章的简短描述
 
 <span class="token operator">&lt;</span><span class="token operator">!</span>-- <span class="token function">more</span> --<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">!</span>-- markdownlint-disable MD041 MD002--<span class="token operator">></span> <span class="token comment" spellcheck="true"># 防止 markdownlint 报错</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- markdownlint-disable MD041 MD002--<span class="token operator">></span> <span class="token comment" spellcheck="true"># 防止 markdownlint 报错</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="hexo-草稿"><a href="#hexo-草稿" class="headerlink" title="hexo 草稿"></a>hexo 草稿</h2><p>Hexo 的一种特殊布局：<code>draft</code>, 这种布局在建立时会被保存到 <code>source/_drafts</code> 文件夹, 您可通过 <code>publish</code> 命令将草稿移动到 <code>source/_posts</code> 文件夹。</p>
 <p>该命令的使用方式与 <code>new</code> 十分类似, 您也可在命令中指定 <code>layout</code> 来指定布局。</p>
-<pre class="line-numbers language-js"><code class="language-js">hexo publish <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span> # 发表草稿
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js">hexo publish <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span> # 发表草稿<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>草稿默认不会显示在页面中, 您可在执行时加上 <code>--draft</code> 参数, 或是把 <code>render_drafts</code> 参数设为 <code>true</code> 来预览草稿。</p>
-<h2 id="hexo-分类和标签"><a href="#hexo-分类和标签" class="headerlink" title="hexo 分类和标签"></a>hexo 分类和标签</h2><p><strong>分类</strong>具有顺序性和层次性。Hexo 不支持指定多个同级分类。</p>
-<p><strong>标签</strong>没有顺序和层次。</p>
+<h2 id="hexo-分类和标签"><a href="#hexo-分类和标签" class="headerlink" title="hexo 分类和标签"></a>hexo 分类和标签</h2><p><strong>分类(categories)</strong>具有顺序性和层次性。Hexo 不支持指定多个同级分类。</p>
+<p><strong>标签(tags)</strong>没有顺序和层次。</p>
 <pre class="line-numbers language-yml"><code class="language-yml">categories:
 - Diary
 - Life
 tags:
 - PS3
-- Games
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+- Games<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上会使分类 <code>Life</code> 成为 <code>Diary</code> 的子分类, 而不是并列分类。</p>
-<p>因此，有必要为您的文章选择<strong>尽可能准确的一个分类</strong></p>
+<p>因此，有必要为您的文章选择<strong>尽可能准确的一个分类(categories)</strong></p>
 
         </div>
 
@@ -248,7 +246,7 @@ tags:
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-02-25T06:37:00.000Z" itemprop="dateUpdated">2019-02-25 14:37:00</time>
+    最后更新时间：<time datetime="2019-10-18T11:23:07.355Z" itemprop="dateUpdated">2019-10-18 19:23:07</time>
 </span><br>
 
 
