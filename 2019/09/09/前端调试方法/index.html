@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-123238835-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 <!-- End Google Analytics -->
 
 
@@ -209,6 +209,7 @@ ga('send', 'pageview');
             <p>一些前端调试方法</p>
 <a id="more"></a>
 <!-- markdownlint-disable MD041 MD002-->
+
 <h2 id="console"><a href="#console" class="headerlink" title="console"></a>console</h2><h3 id="log"><a href="#log" class="headerlink" title="log"></a>log</h3><p><code>console.log()</code> 用于在控制台输出信息。参数类型 String 或 Object</p>
 <h3 id="info-warn-error"><a href="#info-warn-error" class="headerlink" title="info, warn, error"></a>info, warn, error</h3><p>这三个 API 更多的是给开发人员提供额外的信息，来查看页面的运行情况，更多用于被封装过后的组件或框架中。</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// Info</span>
@@ -218,8 +219,7 @@ console<span class="token punctuation">.</span><span class="token function">info
 console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">'On, Your operation may cause a security breach!'</span><span class="token punctuation">)</span>
 
 <span class="token comment" spellcheck="true">// Error 报错</span>
-console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Shit! Variable does not exist!'</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Shit! Variable does not exist!'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><p><code>console.table()</code>只接受一个数组或者对象, 可以接受一个额外的参数来描述表格的列数。它会把数据通过表格的形式打印出来, 这样我们看数据的时候就能直观了很多。</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Jack'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -227,8 +227,7 @@ console<span class="token punctuation">.</span><span class="token function">erro
   <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'baka'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">15</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="group"><a href="#group" class="headerlink" title="group"></a>group</h3><p><code>console.group()</code> 和 <code>console.groupEnd()</code> 是成对出现的，就像我们使用的标签一样。<br><code>console.group()</code>在控制台创建一个新的分组, 输出到控制台上的内容都会被添加一个缩进, 表示该内容属于当前分组, 直到调用 <code>console.group()</code> 之后, 当前分组才结束。</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> boys <span class="token operator">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Jack'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -242,8 +241,7 @@ boys<span class="token punctuation">.</span><span class="token function">forEach
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> years old`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token punctuation">.</span>age <span class="token operator">*</span> <span class="token number">7</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> years old`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">groupEnd</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>原文出自：<a href="https://zhuanlan.zhihu.com/p/80641572" target="_blank" rel="noopener">作者：anran758</a> 来源：知乎</p>
 </blockquote>
@@ -336,7 +334,14 @@ boys<span class="token punctuation">.</span><span class="token function">forEach
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/10/15/Vue子组件内改变prop报错的解决方案/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vue子组件内改变prop报错的解决方案</h4>
+      </a>
+    </div>
   
 
   

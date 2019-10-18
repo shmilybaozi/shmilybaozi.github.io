@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-123238835-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 <!-- End Google Analytics -->
 
 
@@ -40,7 +40,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="hexo&amp;github创建个人博客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-09T12:07:29.196Z">
+<meta property="og:updated_time" content="2019-10-18T11:23:07.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo&amp;github创建个人博客">
 <meta name="twitter:description" content="hexo&amp;github创建个人博客">
@@ -209,33 +209,31 @@ ga('send', 'pageview');
             <p>利用 hexo 和 github 搭载个人博客</p>
 <a id="more"></a>
 <!-- markdownlint-disable MD041 MD002-->
+
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>安装了 node.js, npm, 并会使用</li>
 <li>了解git</li>
 </ul>
 <h2 id="配置-SSH-key"><a href="#配置-SSH-key" class="headerlink" title="配置 SSH key"></a>配置 SSH key</h2><ul>
 <li><p>用 git 或者 cmder 等命令行工具执行：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> ~/. <span class="token function">ssh</span> <span class="token comment" spellcheck="true"># 检查本机已存在的ssh密钥</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> ~/. <span class="token function">ssh</span> <span class="token comment" spellcheck="true"># 检查本机已存在的ssh密钥</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如果显示 <code>No such file or directory</code> 说明还未设置过 SSH key</p>
 </li>
 <li><p>执行：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"邮件地址"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"邮件地址"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后持续回车, 最后会生成一个文件在 <code>.ssh\id_rsa.pub</code> 中, 用记事本打开该文件, 复制里面的内容。</p>
 </li>
 <li><p>打开你的 github 主页, 进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key</p>
 </li>
-<li>将刚复制的内容粘贴到 key 那里, title 取个自己喜欢的, 然后保存。</li>
+<li><p>将刚复制的内容粘贴到 key 那里, title 取个自己喜欢的, 然后保存。</p>
+</li>
 <li><p>测试是否成功</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ssh</span> -T git@github.com <span class="token comment" spellcheck="true"># 注意邮箱地址不用改</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ssh</span> -T git@github.com <span class="token comment" spellcheck="true"># 注意邮箱地址不用改</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如果提示 <code>Are you sure you want to continue connecting (yes/no)?</code> , 输入yes, 然后就会提示 <code>...You’ve successfully authenticated, but GitHub does not provide shell access.</code>, 就是成功了。</p>
 </li>
 <li><p>配置 git 用户名和邮箱</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"username"</span>
-<span class="token function">git</span> config --global user.email  <span class="token string">"email"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token function">git</span> config --global user.email  <span class="token string">"email"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><ul>
@@ -248,25 +246,21 @@ ga('send', 'pageview');
 <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p><a href="http://hexo.io" target="_blank" rel="noopener">hexo官网</a></p>
 <p><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">hexo github</a></p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># npm 安装</span>
-<span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>在刚刚 <code>git clone</code> 的这个文件夹中, 执行：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 此时当前分支应显示为 hexo</span>
 <span class="token function">npm</span> <span class="token function">install</span> hexo
 hexo init
 <span class="token function">npm</span> <span class="token function">install</span>
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>执行以上命令之后, hexo 就会在文件夹中生成博客相关文件</p>
 <h3 id="将-hexo-部署到-username-github-io"><a href="#将-hexo-部署到-username-github-io" class="headerlink" title="将 hexo 部署到 username.github.io"></a>将 hexo 部署到 username.github.io</h3><p>在 <code>_config.yml</code> 中修改：</p>
 <pre class="line-numbers language-yml"><code class="language-yml">deploy:
   type: git
   repository: git@github.com:shmilybaozi/shmilybaozi.github.io.git
-  branch: master
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+  branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-bash"><code class="language-bash">hexo g <span class="token comment" spellcheck="true"># hexo generate 生成静态文件</span>
-hexo g -d <span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+hexo g -d <span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>一些 hexo 命令</p>
 <pre class="line-numbers language-bash"><code class="language-bash">hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span> <span class="token comment" spellcheck="true"># 新建一篇文章, 如果标题包含空格的话, 请使用引号括起来。layout 为 draft 即为草稿</span>
 hexo publish <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>filename<span class="token operator">></span> <span class="token comment" spellcheck="true"># 发表草稿, 如果标题包含空格的话, 请使用引号括起来。</span>
@@ -275,15 +269,12 @@ hexo g -d <span class="token comment" spellcheck="true"># 文件生成后立即�
 hexo s <span class="token comment" spellcheck="true"># hexo server 启动服务器</span>
 hexo d <span class="token comment" spellcheck="true"># hexo deploy 部署网站</span>
 hexo clean <span class="token comment" spellcheck="true"># 清除缓存</span>
-hexo s --debug <span class="token comment" spellcheck="true"># 调试模式, 更改了配置或文章后随时刷新页面来查看效果</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+hexo s --debug <span class="token comment" spellcheck="true"># 调试模式, 更改了配置或文章后随时刷新页面来查看效果</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="部署文章的步骤"><a href="#部署文章的步骤" class="headerlink" title="部署文章的步骤"></a>部署文章的步骤</h3><pre class="line-numbers language-bash"><code class="language-bash">hexo clean <span class="token comment" spellcheck="true"># 清除缓存</span>
-hexo g -d <span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+hexo g -d <span class="token comment" spellcheck="true"># 文件生成后立即部署网站</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="将-hexo-中的代码提交到-git-上"><a href="#将-hexo-中的代码提交到-git-上" class="headerlink" title="将 hexo 中的代码提交到 git 上"></a>将 hexo 中的代码提交到 git 上</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> add <span class="token keyword">.</span>
 <span class="token function">git</span> commit -m <span class="token string">"..."</span>
-<span class="token function">git</span> push origin hexo
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token function">git</span> push origin hexo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>这样一来, 在 github 上的 <code>username.github.io</code> 仓库就有两个分支, 一个 <code>hexo</code> 分支用来存放网站的原始文件, 一个 <code>master</code> 分支用来存放生成的静态网页。</p>
 <p>访问 <code>username.github.io</code> 就能看到个人博客的样子。</p>
 
@@ -294,7 +285,7 @@ hexo g -d <span class="token comment" spellcheck="true"># 文件生成后立即�
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-10-09T12:07:29.196Z" itemprop="dateUpdated">2019-10-09 20:07:29</time>
+    最后更新时间：<time datetime="2019-10-18T11:23:07.353Z" itemprop="dateUpdated">2019-10-18 19:23:07</time>
 </span><br>
 
 

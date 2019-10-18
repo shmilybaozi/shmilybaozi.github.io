@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-123238835-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 <!-- End Google Analytics -->
 
 
@@ -209,6 +209,7 @@ ga('send', 'pageview');
             <p>Yarn 和 NPM 命令</p>
 <a id="more"></a>
 <!-- markdownlint-disable MD041 MD002-->
+
 <h2 id="Yarn和-NPM命令"><a href="#Yarn和-NPM命令" class="headerlink" title="Yarn和 NPM命令"></a>Yarn和 NPM命令</h2><ul>
 <li>NPM是随同 NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题</li>
 <li>Yarn 是一个新的包管理器，用于替代现有的 npm 客户端或者其他兼容 npm 仓库的包管理工具。Yarn 保留了现有工作流的特性，优点是更快、更安全、更可靠。</li>
@@ -221,8 +222,7 @@ ga('send', 'pageview');
 <th>Yarn</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>安装</td>
 <td>新版的NodeJS 已经集成了NPM</td>
 <td><code>npm install -g yarn</code> 或者<a href="https://yarnpkg.com/lang/zh-hans/docs/install/#windows-stable" target="_blank" rel="noopener">通过msi安装升级</a></td>
@@ -277,14 +277,12 @@ ga('send', 'pageview');
 <td><code>npm run</code></td>
 <td><code>yarn run</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
 <li>可以通过输入<code>npm -v</code>来测试是否成功安装</li>
 </ul>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> -v
-6.2.0
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+6.2.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="NPM-常用命令"><a href="#NPM-常用命令" class="headerlink" title="NPM 常用命令"></a>NPM 常用命令</h3><ul>
 <li>NPM提供了很多命令，使用<code>npm help</code>可查看所有命令。</li>
 <li>使用<code>npm help &lt;command&gt;</code>可查看某条命令的详细帮助，例如<code>npm help install</code></li>
@@ -294,39 +292,32 @@ ga('send', 'pageview');
 <ul>
 <li>通过 msi 安装的 yarn 并不会覆盖通过 npm 安装的 yarn，两者同时存在。卸载的话，也是分开卸载的。</li>
 </ul>
-<h4 id="NPM加版本号安装"><a href="#NPM加版本号安装" class="headerlink" title="NPM加版本号安装"></a>NPM加版本号安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn -g
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="NPM加版本号安装"><a href="#NPM加版本号安装" class="headerlink" title="NPM加版本号安装"></a>NPM加版本号安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这样的话，就可以不使用msi，而还是采用更高大上的命令行模式安装最新版的yarn了。<br>我们可以用<code>npm view yarn version</code>，查看NPM上的最新版本号。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@最新版本号 -g
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@最新版本号 -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在官方给出的<a href="https://yarnpkg.com/zh-Hans/docs/install#alternatives-stable" target="_blank" rel="noopener">备选安装方案</a>中提到</p>
 <blockquote>
 <p>注意: 一般来说, 不推荐通过 npm 安装 Yarn 在用基于 Node 的包管理器安装 Yarn 时，该包未被签名，并且只通过基本的 SHA1 散列进行唯一完整性检查。<br>这在安装系统级应用时有安全风险。<br>因为这些原因，高度推荐用你的操作系统最适合的方式来安装 Yarn。</p>
 </blockquote>
-<h4 id="NPM-加-latest-安装"><a href="#NPM-加-latest-安装" class="headerlink" title="NPM 加 latest 安装"></a>NPM 加 latest 安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@latest -g
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="NPM-加-latest-安装"><a href="#NPM-加-latest-安装" class="headerlink" title="NPM 加 latest 安装"></a>NPM 加 latest 安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yarn@latest -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="更新-package-json-的所有依赖"><a href="#更新-package-json-的所有依赖" class="headerlink" title="更新 package.json 的所有依赖"></a>更新 package.json 的所有依赖</h3><ul>
 <li>安装 <code>npm-check-updates</code></li>
 </ul>
 <pre class="line-numbers language-bash"><code class="language-bash">yarn global add npm-check-updates
 <span class="token comment" spellcheck="true"># OR</span>
-<span class="token function">npm</span> i npm-check-updates -g
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token function">npm</span> i npm-check-updates -g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>手动执行 <code>ncu</code> （或 <code>npm-check-updates</code>）检查更新</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash">ncu
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">ncu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>更新 <code>dependencies</code> 到新版本</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash">ncu -u
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">ncu -u<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>更新全部 <code>dependencies</code> 到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -&gt; ^4.3.0)：</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash">ncu -a
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">ncu -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
         </div>
 

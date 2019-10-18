@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-123238835-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 <!-- End Google Analytics -->
 
 
@@ -40,7 +40,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="拈花把酒偏折煞世人情狂">
 <meta property="og:description" content="path.join 和 path.resolve区别">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-09T12:07:29.197Z">
+<meta property="og:updated_time" content="2019-10-18T11:23:07.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="path.join 和 path.resolve区别">
 <meta name="twitter:description" content="path.join 和 path.resolve区别">
@@ -209,6 +209,7 @@ ga('send', 'pageview');
             <p>path.join &amp; path.resolve</p>
 <a id="more"></a>
 <!-- markdownlint-disable MD041 MD002-->
+
 <h2 id="path-join-path1-path2-…"><a href="#path-join-path1-path2-…" class="headerlink" title="path.join([path1][, path2][, …])"></a>path.join([path1][, path2][, …])</h2><p><code>path.join()</code>: 连接任意多个路径字符串。</p>
 <p>注：如果连接后的路径字符串是一个长度为零的字符串, 则返回 <code>&#39;.&#39;</code>, 表示当前工作目录。</p>
 <pre class="line-numbers language-js"><code class="language-js">path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">)</span>
@@ -218,8 +219,7 @@ ga('send', 'pageview');
 <span class="token comment" spellcheck="true">// 不合法的字符串将抛出异常</span>
 path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true">// 抛出的异常</span>
-TypeError<span class="token punctuation">:</span> Arguments to path<span class="token punctuation">.</span>join must be strings'
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+TypeError<span class="token punctuation">:</span> Arguments to path<span class="token punctuation">.</span>join must be strings'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="path-resolve-from…-to"><a href="#path-resolve-from…-to" class="headerlink" title="path.resolve([from…], to)"></a>path.resolve([from…], to)</h2><p><code>path.resolve()</code>: 将多个路径解析为一个规范化的绝对路径。</p>
 <p>其处理方式类似于对这些路径逐一进行 <code>cd</code> 操作, 与 <code>cd</code> 操作不同的是, 这引起路径可以是文件, 并且可不必实际存在（<code>resolve()</code>方法不会利用底层的文件系统判断路径是否存在, 而只是进行路径字符串操作。）</p>
 <p><code>path.resolve(&#39;foo/bar&#39;, &#39;/tmp/file/&#39;, &#39;..&#39;, &#39;a/../subFile&#39;)</code> 相当于:</p>
@@ -228,8 +228,7 @@ TypeError<span class="token punctuation">:</span> Arguments to path<span class="
 <span class="token function">cd</span> <span class="token punctuation">..</span>
 <span class="token function">cd</span> a/<span class="token punctuation">..</span>/subFile
 <span class="token function">pwd</span>
-<span class="token comment" spellcheck="true"># Linux pwd命令用于显示工作目录。执行 pwd 指令可立刻得知您目前所在的工作目录的绝对路径名称。</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># Linux pwd命令用于显示工作目录。执行 pwd 指令可立刻得知您目前所在的工作目录的绝对路径名称。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-js"><code class="language-js">path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'./baz'</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true">// 输出结果为</span>
 <span class="token string">'/foo/bar/baz'</span>
@@ -239,14 +238,12 @@ path<span class="token punctuation">.</span><span class="token function">resolve
 
 path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'wwwroot'</span><span class="token punctuation">,</span> <span class="token string">'static_files/png/'</span><span class="token punctuation">,</span> <span class="token string">'../gif/image.gif'</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true">// 当前的工作路径是 /home/myself/node, 则输出结果为</span>
-<span class="token string">'/home/myself/node/wwwroot/static_files/gif/image.gif'</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token string">'/home/myself/node/wwwroot/static_files/gif/image.gif'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h2><ul>
 <li><code>join</code> 是把各个 path 片段连接在一起， <code>resolve</code> 把<code>&#39;/&#39;</code> 当成根目录</li>
 </ul>
 <pre class="line-numbers language-js"><code class="language-js">path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/a'</span><span class="token punctuation">,</span> <span class="token string">'/b'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// '/a/b'</span>
-path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/a'</span><span class="token punctuation">,</span> <span class="token string">'/b'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// '/b'</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/a'</span><span class="token punctuation">,</span> <span class="token string">'/b'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// '/b'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li><code>join</code> 直接拼接字段，<code>resolve</code> 解析路径并返回绝对路径</li>
 </ul>
@@ -254,8 +251,7 @@ path<span class="token punctuation">.</span><span class="token function">resolve
 <span class="token comment" spellcheck="true">// 'a/b2'</span>
 
 path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b1'</span><span class="token punctuation">,</span> <span class="token string">'..'</span><span class="token punctuation">,</span> <span class="token string">'b2'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">// '/home/myself/node/a/b2'</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true">// '/home/myself/node/a/b2'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
         </div>
 
@@ -264,7 +260,7 @@ path<span class="token punctuation">.</span><span class="token function">resolve
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-10-09T12:07:29.197Z" itemprop="dateUpdated">2019-10-09 20:07:29</time>
+    最后更新时间：<time datetime="2019-10-18T11:23:07.357Z" itemprop="dateUpdated">2019-10-18 19:23:07</time>
 </span><br>
 
 
