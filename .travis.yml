@@ -5,7 +5,6 @@ node_js: stable
 
 # 项目所在分支
 branches:
-  only:
   - hexo
 
 before_install:
