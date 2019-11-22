@@ -8,6 +8,10 @@ branches:
   only:
   - hexo
 
+before_install:
+  - git config user.name "jiaren.tang"
+  - git config user.email "shmilybaozi@163.com"
+
 # 安装依赖
 install:
   - npm install
@@ -15,19 +19,11 @@ install:
 #before_script:
 # - npm install -g gulp
 
+# 部署的命令
 script:
-  - hexo g
+  - npm run deploy # hexo clean && hexo g -d
 
-after_script:
-  - cd ./public
-  - git init
-  - git config user.name "jiaren.tang"
-  - git config user.email "shmilybaozi@163.com"
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${gitToken}@${GH_REF}" master:master
-# E: Build LifeCycle
-
-env:
-  global:
-    - GH_REF: github.com/shmilybaozi/shmilybaozi.github.io.git
+# 缓存n node_modules
+cache:
+  directories:
+    - node_modules
