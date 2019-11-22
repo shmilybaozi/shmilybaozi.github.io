@@ -20,7 +20,6 @@ install:
 
 # 部署的命令
 script:
-  - rm -rf .deploy_git
   - yarn deploy # hexo clean && hexo g -d
 
 # 缓存n node_modules
