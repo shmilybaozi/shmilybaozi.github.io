@@ -14,7 +14,7 @@ before_install:
 
 # 安装依赖
 install:
-  - npm install
+  - yarn
 
 #before_script:
 # - npm install -g gulp
@@ -22,7 +22,7 @@ install:
 # 部署的命令
 script:
   - rm -rf .deploy_git
-  - npm run deploy # hexo clean && hexo g -d
+  - yarn deploy # hexo clean && hexo g -d
 
 # 缓存n node_modules
 cache:
