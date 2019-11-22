@@ -3,7 +3,7 @@
 ## 准备工作
 
 - 安装了 node.js, npm, 并会使用
-- 了解git
+- 了解 git
 
 ## 配置 SSH key
 
@@ -31,7 +31,7 @@
   ssh -T git@github.com # 注意邮箱地址不用改
   ```
 
-  如果提示 `Are you sure you want to continue connecting (yes/no)?` , 输入yes, 然后就会提示 `...You’ve successfully authenticated, but GitHub does not provide shell access.`, 就是成功了。
+  如果提示 `Are you sure you want to continue connecting (yes/no)?` , 输入 yes, 然后就会提示 `...You’ve successfully authenticated, but GitHub does not provide shell access.`, 就是成功了。
 
 - 配置 git 用户名和邮箱
 
@@ -50,7 +50,7 @@
 
 ## Hexo
 
-[hexo官网](http://hexo.io)
+[hexo 官网](http://hexo.io)
 
 [hexo github](https://github.com/hexojs/hexo)
 

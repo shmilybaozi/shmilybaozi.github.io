@@ -6,7 +6,7 @@
 title: 拈花把酒偏折煞世人情狂
 subtitle: 
 description: 一个前端小白的个人博客
-keywords: 前端,JavaScript,CSS,HTML,Vue,React
+keywords: 前端, JavaScript, CSS, HTML, Vue, React
 author: 心要野
 language: zh-CN
 timezone:
@@ -85,8 +85,8 @@ deploy:
 
 # local search for themes: material
 # search:
-# 	path: search.xml
-# 	field: all
+# path: search.xml
+# field: all
 
 # local search for themes: indigo
 jsonContent:
@@ -110,7 +110,7 @@ jsonContent:
 
 # 代码高亮插件 for themes: indigo
 prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
+  mode: 'preprocess' # realtime/preprocess
   theme: 'default' #duotone-light base16-ateliersulphurpool.light
-  line_number: true    # default false
-  # custom_css: 'path/to/your/custom.css'     # optional
+  line_number: true # default false
+  # custom_css: 'path/to/your/custom.css' # optional
