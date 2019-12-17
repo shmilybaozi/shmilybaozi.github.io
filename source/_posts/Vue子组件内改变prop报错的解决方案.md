@@ -57,9 +57,9 @@ computed: {
 
 #### 利用 `.sync` 修饰符
 
-`.sync` 相当于对一个 prop 进行“双向绑定”
+`.sync` 相当于对一个 prop 进行"双向绑定"
 
-父组件引用代码：
+父组件使用 `.sync` 修饰符：
 
 ```html
 <comp :foo.sync="bar"></comp>
@@ -68,9 +68,15 @@ computed: {
 会被拓展成：
 
 ```html
-<comp :foo="bar" @update:foo="val => bar = val"></comp>
+<comp
+  :foo="bar"
+  @update:foo="val => bar = val">
+</comp>
 <!-- 即 -->
-<comp :foo="bar" @update:foo="bar = $event"></comp>
+<comp
+  :foo="bar"
+  @update:foo="bar = $event">
+</comp>
 ```
 
 当子组件需要更新 foo 的值时，它只需要显式地触发一个更新事件：
