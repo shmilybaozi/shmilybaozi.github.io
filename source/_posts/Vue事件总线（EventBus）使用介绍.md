@@ -14,9 +14,7 @@ Vue事件总线（EventBus）使用介绍
 <!-- more -->
 <!-- markdownlint-disable MD041 MD002-->
 
-## Vue事件总线（EventBus）使用介绍
-
-### 子组件向父组件通信
+## 子组件向父组件通信
 
 可以使用 `v-on` 监听子组件上 `$emit` 的变化
 
@@ -48,11 +46,11 @@ changeTitle() {
 >
 > 推荐**始终使用 kebab-case 的事件名**
 
-### 事件总线（EventBus）
+## 事件总线（EventBus）
 
 跨多层父子组件通信，可以通过单独的事件中心管理组件间的通信，在组件中，可以使用 `$emit`, `$on`, `$off` 分别来分发、监听、取消监听事件
 
-#### 创建事件中心
+### 创建事件中心
 
 - 在 `src` 中创建 `eventBus.ts` 文件
 
@@ -78,7 +76,7 @@ this.$bus.XXX
 
 >注意，这种方式初始化的 EventBus 是一个全局的事件总线。
 
-#### 发送事件
+### 发送事件
 
 ```ts
 // 发送消息
@@ -104,7 +102,7 @@ export default {
 </script>
 ```
 
-#### 接收事件
+### 接收事件
 
 ```ts
 // 监听接收消息
@@ -136,7 +134,7 @@ export default {
 </script>
 ```
 
-#### 移除事件监听者
+### 移除事件监听者
 
 通常会在 Vue 页面销毁时，同时移除 EventBus 事件监听
 
@@ -154,7 +152,7 @@ export default {
 </script>
 ```
 
-#### 使用 vue-happy-bus 移除事件监听者
+### 使用 vue-happy-bus 移除事件监听者
 
 它主要解决在非父子组件间通信时，解决重复绑定事件、无法自动销毁的而导致回调函数被执行多次的问题
 
@@ -193,7 +191,7 @@ created(){
 
 ```
 
-### 参考资料
+## 参考资料
 
 - [Vue事件总线（EventBus）使用详细介绍](https://blog.csdn.net/i168wintop/article/details/95107935)
 - [Vue EventBus 使用中的重复触发解决方案及存在的Bug](https://juejin.im/post/5b3db678e51d45199060d478)

@@ -6,6 +6,7 @@
     "version": "3.9.0"
   },
   "scripts": {
+    "start": "hexo s --debug",
     "deploy": "hexo clean && hexo g -d"
   },
   "dependencies": {

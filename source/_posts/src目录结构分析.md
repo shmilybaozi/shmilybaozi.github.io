@@ -16,17 +16,17 @@ src目录结构及命名原则分析
 ```bash
 .
 ├── adapter # 适配器,处理拿到的数据,整理成对象或者别的能直接使用的数据
-|   ├── report.js # (驼峰命名：与api命名一致)
-|   └── selectPhoneNumber.js # (驼峰命名: 与api命名一致)
+|   ├── report.js # (camel 命名：与 api 命名一致)
+|   └── selectPhoneNumber.js # (camel 命名: 与 api 命名一致)
 |
 ├── api # 通过后台接口拿到数据
-|   ├── report.js # (驼峰命名)
-|   └── selectPhoneNumber.js # (驼峰命名)
+|   ├── report.js # (camel 命名)
+|   └── selectPhoneNumber.js # (camel 命名)
 |
 ├── assets # 存放图片
 |
 ├── components # 组件,通过在 views 中的 vue 文件的调用并传入数据,然后渲染在页面中,复用性强
-|   ├── AreaCard.vue #  (Pascal命名)
+|   ├── AreaCard.vue # (Pascal 命名)
 |   ├── Chart.vue
 |   └── Entry.vue
 |
@@ -35,7 +35,7 @@ src目录结构及命名原则分析
 |
 ├── store # vuex
 |   ├── modules # vuex模块
-|   |   ├── clothesSize.js # (驼峰命名)
+|   |   ├── clothesSize.js # (camel 命名)
 |   |   ├── login.js
 |   |   └── user.js
 |   └── index.js
@@ -45,9 +45,9 @@ src目录结构及命名原则分析
 |   └── index.js
 |
 └── views # 页面展示
-    ├── Report.vue # (Pascal命名: 与api命名一致)
+    ├── Report.vue # (Pascal 命名: 与 api 命名一致)
     ├── Dormitory
-    |   ├── DormitoryStudent.vue # (Pascal命名)
+    |   ├── DormitoryStudent.vue # (Pascal 命名)
     |   ├── Edit.vue
     |   └── index.vue
     └── Home.vue
